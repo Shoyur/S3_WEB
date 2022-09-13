@@ -1,0 +1,17 @@
+{
+  "name": "exemple-node-ts",
+  "version": "1.0.0",
+  "description": "Exemple de projet node ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Antonio Tavares",
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security"
+  }
+}
