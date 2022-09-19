@@ -1,0 +1,16 @@
+<script>
+	function* consommateur() {
+    console.log(`En route`);
+	var obj=yield; alert(JSON.stringify(obj));
+    console.log(`1. ${obj[0].titre}  ${obj[0].duree}`); 
+    console.log(`2. ${yield}`);
+    return 'resultat';
+}
+const genObj = consommateur();
+var obj={titre:'Titanic', duree: 180};
+console.log(genObj.next());
+console.log(genObj.next([obj,2]));
+var res=genObj.next(8);
+console.log(res);
+console.log(res.value);//resultat du return
+</script>

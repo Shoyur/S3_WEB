@@ -1,0 +1,13 @@
+<script>
+var params = [ "hello", true, 7 ]
+var autre = [ 1, 2, ...params ] // [ 1, 2, "hello", true, 7 ]
+alert(autre);
+function f (x, y,...a) {alert(a[0])
+    return (x + y) * a.length
+}
+alert(f(1, 2,4,5,7,8))// === 9
+
+var str = "foo"
+var chars = [ ...str ] // [ "f", "o", "o" ]
+alert(chars);
+</script>

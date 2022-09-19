@@ -1,0 +1,11 @@
+<script>
+function testSubstrings(chaine, ...cles) {
+  for (var cle of cles) {
+    if (chaine.indexOf(cle) === -1) {
+      return false;
+    }
+  }
+  return true;
+}
+alert(testSubstrings('ceci est une chaine', 'une', 'ceci'));
+</script>

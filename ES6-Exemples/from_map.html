@@ -1,0 +1,13 @@
+<span class='name'>AAA</span>
+<span class='name'>BBB</span>
+<span class='name'>CCC</span>
+<script>
+	const spans = document.querySelectorAll('span.name');
+
+	// map(), generically:
+	const names1 = Array.prototype.map.call(spans, s => s.textContent);
+	alert(names1)
+	// Array.from():
+	const names2 = Array.from(spans, s => s.textContent);
+	alert(names2)
+</script>

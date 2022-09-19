@@ -1,0 +1,24 @@
+<script>
+class Animal {
+  constructor(nom) {
+    this.nom = nom;
+  }
+
+  parle() {
+    alert(this.nom + ' ne sait pas parler.');
+  }
+}
+
+class Chien extends Animal {
+  constructor(nom) {
+    super(nom); // appelle le constructeur parent avec le paramètre
+  }
+  parle() {
+    alert(this.nom + ' fait ouf,ouf.');
+  }
+}
+let chien = new Chien("Ringo");
+let animal = new Animal("Milou");
+chien.parle();
+animal.parle();
+</script>

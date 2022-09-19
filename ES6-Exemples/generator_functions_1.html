@@ -1,0 +1,24 @@
+<script>
+	function * generatorFunction() { 
+	  console.log('Ceci sera exécuté en premier.');
+	  yield 'Hello, ';   
+	  console.log('Ceci sera exécuté après la pause.');  
+	  yield 'World!';
+	  console.log('Ceci sera exécuté après la pause.');
+	}
+	const generator = generatorFunction();
+    res=generator.next();console.log(res)	
+	console.log(res.value);
+	res=generator.next();console.log(res)
+	console.log(res.value); 
+	//return "FINI";
+	res=generator.next();console.log(res)
+	console.log(res.value); 
+
+	//RÉSULTAT
+	// Ceci sera exécuté en premier.
+	// Hello, 
+	// Ceci sera exécuté après la pause.
+	// World!
+	// undefined
+</script>

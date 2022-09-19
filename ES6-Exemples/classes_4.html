@@ -1,0 +1,22 @@
+<script>
+class MyClass {
+  a = 1;          // .a est publique
+  #b = 2;         // .#b est privé
+  static #c = 3;  // .#c est privé et statique
+  incB() {
+    this.#b++;
+  }
+  get b(){
+	return this.#b;
+  }
+  set b(autreB){
+	this.#b+=autreB;
+  }
+}
+const m = new MyClass();
+m.incB(); // OK
+alert(m.b);
+m.b=2; //appel set b
+alert(m.b);
+//m.#b = 0; // erreur attribut privé
+</script>

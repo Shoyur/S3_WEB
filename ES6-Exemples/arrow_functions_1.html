@@ -1,0 +1,25 @@
+<script>
+evens=[3,5,7,9,11,13,15];
+// Expression bodies
+var odds = evens.map(v => v + 1);alert(odds);
+var nums = evens.map((v, i) => v + i);alert(nums);
+var pairs = evens.map(v => ({even: v, odd: v + 1}));alert(JSON.stringify(pairs));
+
+// Statement bodies
+fives=[];
+evens.forEach(v => {
+  if (v % 5 === 0)
+    fives.push(v);
+});
+alert(fives);
+// Lexical this
+var bob = {
+  _name: "Bob",
+  _friends: ["AA","BB","CC"],
+  printFriends() {
+    this._friends.forEach(f =>
+      alert(this._name + " knows " + f));
+  }
+}
+bob.printFriends();
+</script>
