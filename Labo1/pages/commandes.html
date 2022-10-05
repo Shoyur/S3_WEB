@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza, gaufre et cie (Commandes)</title>
+
+    <link rel="stylesheet" href="../utilitaires/bootstrap-5.2.0-beta1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script src="../utilitaires/jquery-3.6.0.min.js"></script>
+    <script src="../utilitaires/bootstrap-5.2.0-beta1-dist/js/bootstrap.min.js"></script>
+    <script src="../js/scripts.js"></script>
+    <script src="../js/restaurant.js"></script>
+</head>
+
+<body class="bg_resto" onLoad="init_commandes();">
+
+    <div class="section0">
+        <div class="section0RE"> <!-- rectangle avec espaces -->
+            <div id="div0RG" class="section0RG"> <!-- rectangle gauche -->
+                <img class="logo" src="/images/logo.png">
+            </div>
+            <div class="section0RD"> <!-- rectangle droit -->
+                <div class="lienshover"> <!-- rectangle pour 3 -->
+                    <div onclick="quitter();" class="liens"><a href="#">Déconnexion</a></div>
+                    <div id="facture" class="liens facture"><span id="facture" class="facture"></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br><br>
+
+    <div class="container">
+        <div class="row">
+            <div class="carte col-md-4" >
+                <div class="card-body">
+                    <select id="selRepas" onChange="traiterRepas();" class="form-select"></select>
+                    <h5 id="nomRepas" class="texte_bouffe"></h5>
+                    <h5 id="prixRepas"></h5>
+                </div>
+                <br>
+                <img id="imgRepas" src="" class="carte_image">
+            </div>
+            <div class="carte col-md-4">
+                <div class="card-body">
+                    <select id="selDesserts" onChange="traiterDessert();" class="form-select"></select>
+                    <h5 id="nomDessert" class="texte_bouffe"></h5>
+                    <h5 id="prixDessert"></h5>
+                </div>
+                <br>
+                <img id="imgDessert" src="" class="carte_image">
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza, gaufre et cie (Commandes)</title>
+
+    <link rel="stylesheet" href="client\utilitaires\bootstrap-5.2.0-beta1-dist\css\bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="client\utilitaires\jquery-3.6.0.min.js"></script>
+    <script src="js/global.js"></script>
+    <script src="client\utilitaires\bootstrap-5.2.0-beta1-dist\js\bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+</head>
+
+<body class="bg_resto">
+    
+    <div class="section0">
+        <div class="section0RE"> <!-- rectangle avec espaces -->
+            <div id="div0RG" class="section0RG"> <!-- rectangle gauche -->
+                <img class="logo" src="/images/logo.png">
+            </div>
+            <div class="section0RD"> <!-- rectangle droit -->
+                <div class="lienshover"> <!-- rectangle pour 3 -->
+                    <div onclick="alert();" class="liens"><a href="#">Connexion</a></div>
+                    <div onclick="devenirMembre();" class="liens"><a href="#">Devenir membre</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal enregistrer membre -->
+    <div class="modal fade carte" id="modalEnreg" tabindex="-1" aria-labelledby="exampleModalLabel">
+    <!-- tabindex="-1" veut dire que ce n'est pas accessible par le clavier -->
+    <!-- aria-labelledby="exampleModalLabel" veut dire que ça référence un autre objet, dans ce cas ci, le texte <h5> -->
+        <div class="modal-dialog">
+            <div class="modal-content carte">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Enregistrement membre</h5>
+                    <button type="button" class="btn-close texte_input" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Form enregistrer -->
+                    <!-- <form class="row g-3" action="" method="POST" onSubmit="return validerFormEnregSubmit();"> -->
+                    <form id="formEnreg" class="row g-3">
+                        <span id="formEnregErr"></span>
+                        <div class="col-md-6">
+                            <label for="prenom" class="form-label">Prénom</label>
+                            <input type="text" class="form-control is-valid texte_input" id="prenom" name="prenom" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="nom" class="form-label">Nom</label>
+                            <input type="text" class="form-control is-valid texte_input" id="nom" name="nom" required>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="courriel" class="form-label">Courriel</label>
+                            <input type="email" class="form-control is-valid texte_input" id="courriel" name="courriel" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="pass" class="form-label">Mot de passe</label>
+                            <input type="password" class="form-control is-valid texte_input" id="pass" name="pass" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="cpass" class="form-label">Confirmer le mot de passe</label>
+                            <input type="password" class="form-control is-valid texte_input" id="cpass" name="cpass" required>
+                        </div>
+                        <span id="info">Pour des raisons statistiques</span>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" value="F" name="sexe" id="fm">
+                            <label class="form-check-label" for="fm">
+                                Femme
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" value="H" name="sexe" id="hm">
+                            <label class="form-check-label" for="hm">
+                                Homme
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" value="A" name="sexe" id="au">
+                            <label class="form-check-label" for="au">
+                                Autre
+                            </label>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="dnais" class="form-label">Date de naissance</label>
+                            <input type="date" class="form-control is-valid texte_input" id="dnais" name="dnais">
+                        </div>
+                        <div class="col-12">
+                            <!-- <button class="btn btn-primary" type="submit">Enregistrer</button> -->
+                            <button class="btn btn-primary" type="button" onClick="validerFormEnregButon();">Enregistrer</button>
+                            <button class="btn btn-danger" type="reset">Tout effacer</button>
+                        </div>
+                    </form>
+                    <!-- Fin form enregistrer-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fin modal enregistrer membre -->
+    <!-- Modal connexion -->
+    <div class="modal fade" id="modalConnexion" tabindex="-1" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog">
+            <div class="modal-content carte">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Connexion</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Form enregistrer -->
+                    <form id="formConnexion" class="row g-3">
+                        <span id="formConnexionErr"></span>
+                        <div class="col-md-6">
+                            <label for="courrielc" class="form-label">Courriel</label>
+                            <input type="email" class="form-control is-valid texte_input" id="courrielc" name="courrielc" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="passc" class="form-label">Mot de passe</label>
+                            <input type="password" class="form-control is-valid texte_input" id="passc" name="passc" required>
+                        </div>
+                        
+                        <div class="col-12">
+                            <button class="btn btn-primary" type="button" onClick="seConnecter();">Connecter</button>
+                        </div>
+                    </form>
+                    <!-- Fin form connexion -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fin modal connexion -->
+
+</body>
+</html>
