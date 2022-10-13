@@ -7,7 +7,7 @@
     color: #FFFFFF !important;
 }
 body {
-    background-image: url('../images/menu.jpg');
+    background-color: #111111;
     margin: 0 auto;
     text-transform: none;
     overflow-wrap: break-word;
@@ -23,12 +23,6 @@ body {
     pointer-events: auto;
 
 
-}
-.bg_resto {
-    background-image: url('/images/restaurant.jpg');
-}
-.logo {
-    height: 30px;
 }
 a, a:link, a:visited, a:active {
     text-decoration: none;
@@ -89,3 +83,8 @@ select {
     border-color: #FFFFFF !important;
     color: #FFFFFF !important;
 }
+
+nav {
+    margin-left: 30px;
+}
+
