@@ -1,0 +1,11 @@
+.bgnavbarperso {
+    background-color: black !important;
+}
+
+.bgnavbarperso li a{
+color: #ffffff !important;
+}
+
+#formAnnee{
+    display: none;
+}

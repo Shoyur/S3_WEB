@@ -1,0 +1,570 @@
+[
+ {
+   "IdLivre": 400,
+   "Titre": "Une aventure d'Astérix le gaulois. Le devin",
+   "IdAuteur": 11,
+   "Annee": 1972,
+   "Pages": 48,
+   "Categorie": "bandes dessinées"
+ },
+ {
+   "IdLivre": 300,
+   "Titre": "Une aventure d'Astérix le gaulois. Astérix en Corse",
+   "IdAuteur": 11,
+   "Annee": 1973,
+   "Pages": 48,
+   "Categorie": "bandes dessinées"
+ },
+ {
+   "IdLivre": 200,
+   "Titre": "Une aventure d'Astérix le gaulois. Le cadeau de César",
+   "IdAuteur": 11,
+   "Annee": 1974,
+   "Pages": 48,
+   "Categorie": "bandes dessinées"
+ },
+ {
+   "IdLivre": 500,
+   "Titre": "Les filles de Caleb Tome 1. Le chant du coq",
+   "IdAuteur": 1,
+   "Annee": 1985,
+   "Pages": 528,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 125,
+   "Titre": "Album de famille",
+   "IdAuteur": 4,
+   "Annee": 1985,
+   "Pages": 454,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 642,
+   "Titre": "Les filles de Caleb Tome 2. Le cri de l'oie blanche",
+   "IdAuteur": 1,
+   "Annee": 1986,
+   "Pages": 790,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 234,
+   "Titre": "Secrets",
+   "IdAuteur": 4,
+   "Annee": 1986,
+   "Pages": 320,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 350,
+   "Titre": "La ronde des souvenirs",
+   "IdAuteur": 4,
+   "Annee": 1988,
+   "Pages": 372,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 124,
+   "Titre": "Traversées",
+   "IdAuteur": 4,
+   "Annee": 1988,
+   "Pages": 387,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 237,
+   "Titre": "Une autre vie",
+   "IdAuteur": 4,
+   "Annee": 1988,
+   "Pages": 381,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 900,
+   "Titre": "La belle vie",
+   "IdAuteur": 4,
+   "Annee": 1989,
+   "Pages": 451,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 890,
+   "Titre": "La vagabonde",
+   "IdAuteur": 4,
+   "Annee": 1989,
+   "Pages": 410,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 265,
+   "Titre": "Le don de l'amour Loving",
+   "IdAuteur": 4,
+   "Annee": 1989,
+   "Pages": 392,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 354,
+   "Titre": "Star",
+   "IdAuteur": 4,
+   "Annee": 1990,
+   "Pages": 473,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 453,
+   "Titre": "Un parfait inconnu",
+   "IdAuteur": 4,
+   "Annee": 1990,
+   "Pages": 361,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 789,
+   "Titre": "Zoya",
+   "IdAuteur": 4,
+   "Annee": 1990,
+   "Pages": 470,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 987,
+   "Titre": "L'âme soeur",
+   "IdAuteur": 7,
+   "Annee": 1990,
+   "Pages": 380,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 765,
+   "Titre": "Dors ma jolie",
+   "IdAuteur": 6,
+   "Annee": 1990,
+   "Pages": 289,
+   "Categorie": "suspense"
+ },
+ {
+   "IdLivre": 213,
+   "Titre": "Marie LaFlamme Tome 1",
+   "IdAuteur": 2,
+   "Annee": 1991,
+   "Pages": 398,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 678,
+   "Titre": "Cher Daddy",
+   "IdAuteur": 4,
+   "Annee": 1991,
+   "Pages": 370,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 912,
+   "Titre": "Kaléidoscope",
+   "IdAuteur": 4,
+   "Annee": 1991,
+   "Pages": 389,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 983,
+   "Titre": "Marie LaFlamme Tome 2. Nouvelle-France",
+   "IdAuteur": 2,
+   "Annee": 1992,
+   "Pages": 383,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 930,
+   "Titre": "Les promesses de la passion",
+   "IdAuteur": 4,
+   "Annee": 1992,
+   "Pages": 301,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 934,
+   "Titre": "Souvenirs du Vietnam",
+   "IdAuteur": 4,
+   "Annee": 1992,
+   "Pages": 372,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 222,
+   "Titre": "Nous n'irons plus au bois",
+   "IdAuteur": 6,
+   "Annee": 1992,
+   "Pages": 341,
+   "Categorie": "suspense"
+ },
+ {
+   "IdLivre": 333,
+   "Titre": "Recherche jeune femme aimant danser",
+   "IdAuteur": 6,
+   "Annee": 1992,
+   "Pages": 342,
+   "Categorie": "suspense"
+ },
+ {
+   "IdLivre": 777,
+   "Titre": "Ces enfants d'ailleurs Tome 1. Même les oiseaux se sont tus",
+   "IdAuteur": 1,
+   "Annee": 1993,
+   "Pages": 595,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 999,
+   "Titre": "Coups de coeur",
+   "IdAuteur": 4,
+   "Annee": 1993,
+   "Pages": 320,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 765,
+   "Titre": "Joyaux",
+   "IdAuteur": 4,
+   "Annee": 1993,
+   "Pages": 478,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 645,
+   "Titre": "La fin de l'été",
+   "IdAuteur": 4,
+   "Annee": 1993,
+   "Pages": 378,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 901,
+   "Titre": "Un si grand amour",
+   "IdAuteur": 4,
+   "Annee": 1993,
+   "Pages": 372,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 905,
+   "Titre": "Les ailes du destin",
+   "IdAuteur": 5,
+   "Annee": 1993,
+   "Pages": 465,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 845,
+   "Titre": "La menace",
+   "IdAuteur": 8,
+   "Annee": 1993,
+   "Pages": 63,
+   "Categorie": "nouvelle"
+ },
+ {
+   "IdLivre": 890,
+   "Titre": "La maison du guet",
+   "IdAuteur": 6,
+   "Annee": 1993,
+   "Pages": 224,
+   "Categorie": "suspense"
+ },
+ {
+   "IdLivre": 548,
+   "Titre": "La nuit du renard",
+   "IdAuteur": 6,
+   "Annee": 1993,
+   "Pages": 277,
+   "Categorie": "suspense"
+ },
+ {
+   "IdLivre": 109,
+   "Titre": "Le démon du passé",
+   "IdAuteur": 6,
+   "Annee": 1993,
+   "Pages": 345,
+   "Categorie": "suspense"
+ },
+ {
+   "IdLivre": 439,
+   "Titre": "Un jour tu verras...",
+   "IdAuteur": 6,
+   "Annee": 1993,
+   "Pages": 343,
+   "Categorie": "suspense"
+ },
+ {
+   "IdLivre": 910,
+   "Titre": "Marie LaFlamme Tome 3. La renarde",
+   "IdAuteur": 2,
+   "Annee": 1994,
+   "Pages": 397,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 915,
+   "Titre": "Disparu",
+   "IdAuteur": 4,
+   "Annee": 1994,
+   "Pages": 305,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 925,
+   "Titre": "La maison des jours heureux",
+   "IdAuteur": 4,
+   "Annee": 1994,
+   "Pages": 496,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 888,
+   "Titre": "Naissances",
+   "IdAuteur": 4,
+   "Annee": 1994,
+   "Pages": 356,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 111,
+   "Titre": "Le grand blanc",
+   "IdAuteur": 5,
+   "Annee": 1994,
+   "Pages": 891,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 999,
+   "Titre": "Souviens-toi",
+   "IdAuteur": 6,
+   "Annee": 1994,
+   "Pages": 388,
+   "Categorie": "suspense"
+ },
+ {
+   "IdLivre": 222,
+   "Titre": "Ces enfants d'ailleurs Tome 2. L'envol des tourterelles",
+   "IdAuteur": 1,
+   "Annee": 1995,
+   "Pages": 408,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 835,
+   "Titre": "Accident",
+   "IdAuteur": 4,
+   "Annee": 1995,
+   "Pages": 344,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 836,
+   "Titre": "Le cadeau",
+   "IdAuteur": 4,
+   "Annee": 1995,
+   "Pages": 212,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 837,
+   "Titre": "Plein ciel",
+   "IdAuteur": 4,
+   "Annee": 1995,
+   "Pages": 420,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 624,
+   "Titre": "Un monde de rêve",
+   "IdAuteur": 4,
+   "Annee": 1995,
+   "Pages": 384,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 625,
+   "Titre": "Cinq jours a Paris",
+   "IdAuteur": 4,
+   "Annee": 1996,
+   "Pages": 245,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 526,
+   "Titre": "L'anneau de Cassandra",
+   "IdAuteur": 4,
+   "Annee": 1996,
+   "Pages": 397,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 738,
+   "Titre": "Maintenant et pour toujours",
+   "IdAuteur": 4,
+   "Annee": 1996,
+   "Pages": 530,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 538,
+   "Titre": "Malveillance",
+   "IdAuteur": 4,
+   "Annee": 1996,
+   "Pages": 391,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 638,
+   "Titre": "Ce que vivent les roses",
+   "IdAuteur": 6,
+   "Annee": 1996,
+   "Pages": 285,
+   "Categorie": "suspense"
+ },
+ {
+   "IdLivre": 426,
+   "Titre": "Douce nuit",
+   "IdAuteur": 6,
+   "Annee": 1996,
+   "Pages": 213,
+   "Categorie": "suspense"
+ },
+ {
+   "IdLivre": 289,
+   "Titre": "Honneur et Courage",
+   "IdAuteur": 4,
+   "Annee": 1997,
+   "Pages": 350,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 389,
+   "Titre": "La foudre",
+   "IdAuteur": 4,
+   "Annee": 1997,
+   "Pages": 410,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 489,
+   "Titre": "Une saison de passion",
+   "IdAuteur": 4,
+   "Annee": 1997,
+   "Pages": 565,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 589,
+   "Titre": "L'Homme au masque",
+   "IdAuteur": 7,
+   "Annee": 1997,
+   "Pages": 474,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 982,
+   "Titre": "Joyeux Noël Merry Christmas",
+   "IdAuteur": 6,
+   "Annee": 1997,
+   "Pages": 230,
+   "Categorie": "suspense"
+ },
+ {
+   "IdLivre": 983,
+   "Titre": "La maison du clair de lune, suivi de Vol de routine",
+   "IdAuteur": 6,
+   "Annee": 1997,
+   "Pages": 363,
+   "Categorie": "suspense"
+ },
+ {
+   "IdLivre": 984,
+   "Titre": "Tu m'appartiens",
+   "IdAuteur": 6,
+   "Annee": 1997,
+   "Pages": 341,
+   "Categorie": "suspense"
+ },
+ {
+   "IdLivre": 985,
+   "Titre": "Le Fantôme",
+   "IdAuteur": 4,
+   "Annee": 1998,
+   "Pages": 416,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 555,
+   "Titre": "Le ranch, suivi de Amour",
+   "IdAuteur": 4,
+   "Annee": 1998,
+   "Pages": 502,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 557,
+   "Titre": "Ni vue ni connue",
+   "IdAuteur": 6,
+   "Annee": 1998,
+   "Pages": 266,
+   "Categorie": "suspense"
+ },
+ {
+   "IdLivre": 556,
+   "Titre": "La petite fille qui aimait trop les allumettes",
+   "IdAuteur": 3,
+   "Annee": 1998,
+   "Pages": 180,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 558,
+   "Titre": "Une si longue nuit",
+   "IdAuteur": 6,
+   "Annee": 1999,
+   "Pages": 158,
+   "Categorie": "suspense"
+ },
+ {
+   "IdLivre": 755,
+   "Titre": "Et nous nous reverrons...",
+   "IdAuteur": 6,
+   "Annee": 2000,
+   "Pages": 356,
+   "Categorie": "suspense"
+ },
+ {
+   "IdLivre": 655,
+   "Titre": "Soins intensifs",
+   "IdAuteur": 2,
+   "Annee": 2001,
+   "Pages": 251,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 855,
+   "Titre": "Avant de te dire adieu",
+   "IdAuteur": 6,
+   "Annee": 2001,
+   "Pages": 346,
+   "Categorie": "suspense"
+ },
+ {
+   "IdLivre": 111,
+   "Titre": "Prisonniers du temps",
+   "IdAuteur": 10,
+   "Annee": 2001,
+   "Pages": 620,
+   "Categorie": "roman"
+ },
+ {
+   "IdLivre": 134,
+   "Titre": "Dans la rue où vit celle que j'aime",
+   "IdAuteur": 6,
+   "Annee": 2002,
+   "Pages": 348,
+   "Categorie": "suspense"
+ }
+]

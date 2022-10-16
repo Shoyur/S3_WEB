@@ -5,7 +5,7 @@ function printString(string){
          console.log(string)
          resolve()
         }, 
-       Math.floor(Math.random() * 100) + 1
+       Math.floor(Math.random() * 1000) + 1
       )
     })
 }
