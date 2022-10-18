@@ -35,21 +35,20 @@ exp.get("/livres", async (req: Request, res: Response) => {
 });
 
 exp.all("/films", async (req: Request, res: Response) => {
-req.body.action = "fichier";
-req.body.nom = "films.json";
-   let reponse = await controleurFilms(req);
-   
-   if(req.body.action === "fichier"){
-      res.sendFile(reponse);
-   } else{
-      const liste = [
-        { id: 1, nom: "Bibi" },
-        { id: 2, nom: "Baba" },
-        { id: 3, nom: "Bobo" }
-      ];
-
-      res.send(JSON.stringify(liste));
-   }
+  req.body.action = "fichier";
+  req.body.nom = "films.json";
+  let reponse = await controleurFilms(req);
+  // Si action=fichier, envoie fichier :
+  if (req.body.action === "fichier") { res.sendFile(reponse); }
+  // Sinon, envoie à partir cet objet manuellement :
+  else{
+    const liste = [
+      { id: 1, nom: "Bibi" },
+      { id: 2, nom: "Baba" },
+      { id: 3, nom: "Bobo" }
+    ];
+    res.send(JSON.stringify(liste));
+  }
 });
 
 exp.all("/membres", async (req: Request, res: Response) => {

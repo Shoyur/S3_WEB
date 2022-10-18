@@ -1,5 +1,6 @@
-const http = require("http");
+const http = require('http');
 const fs = require('fs').promises;
+const express = require();
 
 const hote = "localhost";
 const port = 8000;
@@ -23,3 +24,10 @@ const serveur = http.createServer(ecouteurRequetes);
 serveur.listen(port, hote, () => {
   console.log(`Serveur demarré sur http://${hote}:${port}`);
 });
+
+
+
+// A priori, fonctionne mais le html appel du CSS, 
+// mais ne peut car je crois il manque =>
+// app.use(express.static(__dirname)); // pour avoir tout, css, js, ...
+// mais là c'est une version express avec tout de différent...

@@ -10,3 +10,6 @@ const serveur = http.createServer(ecouteurRequetes);
 serveur.listen(port, hote, () => {
   console.log(`Serveur demarré sur http://${hote}:${port}`);
 });
+
+
+// Démarrage mais rien qui se passe.

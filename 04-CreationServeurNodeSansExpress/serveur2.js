@@ -26,3 +26,7 @@ const serveur = http.createServer(ecouteurRequetes);
 serveur.listen(port, hote, () => {
   console.log(`Serveur demarré sur http://${hote}:${port}`);
 });
+
+// Même chose que serveur1.js MAIS envoie Head-Head-Content
+// qui conclue l'envoie avec .end.
+// Le contenu a un peu de html... :)

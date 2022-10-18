@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gestion des permis d'animaux de compagnie.</title>
+
+    <link rel="stylesheet" href="utilitaires/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="utilitaires/jquery-3.6.0.min.js"></script>
+    <script src="utilitaires/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+
+    <script src="js/global.js"></script>
+</head>
+    
+<body onload="chargerPermisJSON();">
+    <!-- Barre de navigation -->
+    <nav class="navbar navbar-expand-lg bgnavbarperso navcustom">
+        <ul class="navbar-nav">
+            <li class="nav-item"><button id="b1" type="button" class="btn btn-secondary btn-sm" onclick="listerTous();">Lister tous les permis</button></li>
+            <li class="nav-item"><button id="b2" type="button" class="btn btn-secondary btn-sm" data-toggle="popover" onclick="listerSelonAnimal();">...selon l'animal</button></li>
+            <li class="nav-item"><button id="b3" type="button" class="btn btn-secondary btn-sm" onclick="listerSelonVille();">...selon la ville</button></li>
+            <li class="nav-item"><button id="b4" type="button" class="btn btn-secondary btn-sm" onclick="listerExpirentQuand();">...selon la date d'expiration</button></li>
+            <li class="nav-item"><button id="b5" type="button" class="btn btn-secondary btn-sm" onclick="listerTousMaisTries();">...tous triés selon l'animal</button></li>
+        </ul>
+    </nav>
+    <!-- Fin barre de navigation -->
+    <br/><br/>
+    <div class="container">
+        <div id="contenu"></div>
+    </div>
+
+</body>
+</html>

@@ -1,3 +1,5 @@
+
+
 function printString(string, puissance, callback){
   setTimeout(
     () => {
@@ -22,5 +24,6 @@ function printAll(){
   printString("C", nouvelleValeur,funcA);
   console.log("Fin des appels");
 }
+
 printAll()
 console.log("APRÈS");
