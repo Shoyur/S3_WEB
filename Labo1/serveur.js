@@ -20,20 +20,15 @@ exp.get('/', function(req, res) {
   res.sendFile(path.join(__dirname + '/public/index.html'))
 });
 
-exp.get('/tous', function(req, res) {
+exp.post('/tous', function(req, res) {
   res.sendFile(path.join(__dirname + "/serveur/donnees/permis-animaux.json"));
 });
 
-exp.get('/selonAnimal', function(req, res) {
-  console.log("debut du get"); // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  // res.sendFile(path.join(__dirname + "/serveur/donnees/permis-animaux.json"));
+exp.post('/selonAnimal', function(req, res) {
   let json = require(path.join(__dirname + "/serveur/donnees/permis-animaux.json"));
-  // console.log(json[0]);
   const key = "Animal_Type_de_permis";
   const value = req.body.animal;
-  const result = data.filter(d=>d[key]==value);
-  res.sendFile(result);
-  console.log("fin du get"); // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  res.send(json.filter(d => d[key] === value));
 });
 
 exp.get('/ville', function(req, res) {

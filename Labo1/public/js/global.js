@@ -1,22 +1,25 @@
-const lister = (typeL, parametre) => {
+const lister = (arg) => {
+    // const lister = (typeL, parametre) => {
 
-    console.log("debut commande lister()");
+    // console.log("debut commande lister()");
 
-    let chemin = {
-        "tous": "/tous",
-        "animal": "/selonAnimal",
-        "ville": "/selonVille",
-        "animal": "/selonAnimal",
-        "expire": "/quiExpirent",
-        "tries": "/tousTries"
-    };
-    let parametre = "chat";
-    let cheminURL = chemin[typeL];
+    // let chemin = {
+    //     "tous": "/tous",
+    //     "animal": "/selonAnimal",
+    //     "ville": "/selonVille",
+    //     "animal": "/selonAnimal",
+    //     "expire": "/quiExpirent",
+    //     "tries": "/tousTries"
+    // };
+    // let parametre = "chat";
+    // let cheminURL = chemin[typeL];
 
+    // console.log("juste avant ajax de lister()");
     $.ajax({
-        url: cheminURL,
-        type: "GET",
-        data: { 'animal': parametre },
+        url: arg,
+        // url: "/tous",
+        type: "POST",
+        data: { 'animal': 'Chat' },
         dataType: 'json',  // json, xml, text
         async: true, // false pour se  mettre en mode synchrone.
         success: (listePermis) => {
@@ -31,9 +34,9 @@ const lister = (typeL, parametre) => {
         }
         
     });
-    if (typeL == "animal") {
-        console.log("fin commande lister()");
-    }
+    // if (typeL == "animal") {
+    //     console.log("fin commande lister()");
+    // }
 }
 
 const construireEntetes = () => {
