@@ -24,21 +24,25 @@ exp.post('/tous', function(req, res) {
   res.sendFile(path.join(__dirname + "/serveur/donnees/permis-animaux.json"));
 });
 
-exp.post('/selonAnimal', function(req, res) {
+exp.post('/animal', function(req, res) {
   let json = require(path.join(__dirname + "/serveur/donnees/permis-animaux.json"));
-  const key = "Animal_Type_de_permis";
-  const value = req.body.animal;
+  const key = req.body.key;
+  const value = req.body.value;
+  res.send(json.filter(d => d[key] === value));
+  
+});
+
+exp.post('/ville', function(req, res) {
+  let json = require(path.join(__dirname + "/serveur/donnees/permis-animaux.json"));
+  const key = req.body.key;
+  const value = req.body.value;
   res.send(json.filter(d => d[key] === value));
 });
 
-exp.get('/ville', function(req, res) {
+exp.post('/expire', function(req, res) {
   res.sendFile(path.join(__dirname + "/serveur/donnees/permis-animaux.json"));
 });
 
-exp.get('/quiExpirent', function(req, res) {
-  res.sendFile(path.join(__dirname + "/serveur/donnees/permis-animaux.json"));
-});
-
-exp.get('/tousTries', function(req, res) {
+exp.post('/tries', function(req, res) {
   res.sendFile(path.join(__dirname + "/serveur/donnees/permis-animaux.json"));
 });

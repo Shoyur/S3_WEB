@@ -1,33 +1,58 @@
 const lister = (arg) => {
-    // const lister = (typeL, parametre) => {
+    var spec;
+    switch (arg) {
+        case '/tous': { 
+            spec = null;
+            break;
+        }
+        case '/animal': {
+            spec = {
+                key: "Animal_Type_de_permis",
+                value: prompt("Entrez un animal :")
+};
+            break;
+        }
+        case '/ville': { 
+            spec = {
+                key: "Gardien_Territoire_ex_villes",
+                value: prompt("Entrez une ville :")
+            };
+            break;
+        }
+        case '/expire': { 
+            spec = null;
+            break;
+        }
+        case '/tries': { 
+            spec = null; 
+            break;
+        }
 
-    // console.log("debut commande lister()");
+    }
 
-    // let chemin = {
-    //     "tous": "/tous",
-    //     "animal": "/selonAnimal",
-    //     "ville": "/selonVille",
-    //     "animal": "/selonAnimal",
-    //     "expire": "/quiExpirent",
-    //     "tries": "/tousTries"
-    // };
-    // let parametre = "chat";
-    // let cheminURL = chemin[typeL];
 
-    // console.log("juste avant ajax de lister()");
     $.ajax({
         url: arg,
-        // url: "/tous",
         type: "POST",
-        data: { 'animal': 'Chat' },
+        data: spec,
         dataType: 'json',  // json, xml, text
         async: true, // false pour se  mettre en mode synchrone.
         success: (listePermis) => {
+            let combien = 0;
             if (listePermis == null) { return; }
-            let resultat = construireEntetes();
-            for (let unPermis of listePermis) { resultat += construireTR(unPermis); }
-            resultat += "</tbody></table>";
-            document.getElementsByClassName('container')[0].innerHTML = resultat;
+            let texteListe = "";
+            let texteListeTemp = "";
+            for (let unPermis of listePermis) { 
+                texteListeTemp += construireTR(unPermis);
+                combien++;
+            }
+            
+            texteListe += construireEntetes();
+            texteListe += "Il y a <b>" + combien + "</b> résultats :<br><br>";
+            texteListe += texteListeTemp;
+            texteListe += "</tbody></table>";
+            
+            document.getElementsByClassName('container')[0].innerHTML = texteListe;
         },
         fail: (e) => {
             alert(`Erreur!\nLe fichier source des permis n'a pu être chargé.\nRaison:\n${e.message}`);
