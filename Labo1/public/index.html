@@ -8,11 +8,11 @@
 
     <title>Gestion des permis d'animaux de compagnie.</title>
 
-    <link rel="stylesheet" href="utilitaires/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="utilitaires/bootstrap-5.2.2-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 
     <script src="utilitaires/jquery-3.6.0.min.js"></script>
-    <script src="utilitaires/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+    <script src="utilitaires/bootstrap-5.2.2-dist/js/bootstrap.min.js"></script>
 
     <script src="js/global.js"></script>
 </head>
@@ -21,12 +21,21 @@
     <!-- Barre de navigation -->
     <nav class="navbar navbar-expand-lg bgnavbarperso navcustom">
         <ul class="navbar-nav">
-            <li class="nav-item"><button id="b1" type="button" class="btn btn-secondary btn-sm" onclick="lister('/tous');">Lister tous les permis</button></li>
-            <!-- <li class="nav-item"><button id="b1" type="button" class="btn btn-secondary btn-sm" onclick="lister('tous', null);">Lister tous les permis</button></li> -->
-            <li class="nav-item"><button id="b2" type="button" class="btn btn-secondary btn-sm" onclick="lister('/animal');">...selon l'animal</button></li>
-            <li class="nav-item"><button id="b3" type="button" class="btn btn-secondary btn-sm" onclick="lister('/ville');">...selon la ville</button></li>
-            <li class="nav-item"><button id="b4" type="button" class="btn btn-secondary btn-sm" onclick="lister('/expire');">...selon la date d'expiration</button></li>
-            <li class="nav-item"><button id="b5" type="button" class="btn btn-secondary btn-sm" onclick="lister('/tries');">...tous triés selon l'animal</button></li>
+            <li class="nav-item">
+                <button 
+                    id="b1" 
+                    type="button" 
+                    class="btn btn-secondary btn-sm" 
+
+                    onclick="listerPermis('tous');"
+                    >
+                    Lister tous les permis
+                </button>
+            </li>
+            <li class="nav-item"><button id="b2" type="button" class="btn btn-secondary btn-sm" onclick="listerPermis('animal');">...selon l'animal</button></li>
+            <li class="nav-item"><button id="b3" type="button" class="btn btn-secondary btn-sm" onclick="listerPermis('ville');">...selon la ville</button></li>
+            <li class="nav-item"><button id="b4" type="button" class="btn btn-secondary btn-sm" onclick="listerPermis('expire');">...selon la date d'expiration</button></li>
+            <li class="nav-item"><button id="b5" type="button" class="btn btn-secondary btn-sm" onclick="listerPermis('tries');">...tous triés selon l'animal</button></li>
         </ul>
     </nav>
     <!-- Fin barre de navigation -->

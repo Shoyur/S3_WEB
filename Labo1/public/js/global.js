@@ -1,38 +1,15 @@
-const lister = (arg) => {
-    var spec;
-    switch (arg) {
-        case '/tous': { 
-            spec = null;
-            break;
-        }
-        case '/animal': {
-            spec = {
-                key: "Animal_Type_de_permis",
-                value: prompt("Entrez un animal :")
-};
-            break;
-        }
-        case '/ville': { 
-            spec = {
-                key: "Gardien_Territoire_ex_villes",
-                value: prompt("Entrez une ville :")
-            };
-            break;
-        }
-        case '/expire': { 
-            spec = null;
-            break;
-        }
-        case '/tries': { 
-            spec = null; 
-            break;
-        }
+const listerPermis = (arg) => {
 
-    }
-
+    let spec = {};
+    spec['tous'] = function() { spec = { key: "tous" }; };
+    spec['animal'] = function() { spec = { key: arg, value: prompt("Entrez un animal :") }; };
+    spec['ville'] = function() { spec = { key: arg, value: prompt("Entrez une ville :") }; };
+    spec['expire'] = function() { spec = { key: arg, an: prompt("Entrez une année :"), mois: prompt("Entrez un mois :") }; };
+    spec['tries'] = function() { spec = { key: "tries" }; };
+    spec[arg]();
 
     $.ajax({
-        url: arg,
+        url: '/permis',
         type: "POST",
         data: spec,
         dataType: 'json',  // json, xml, text
@@ -46,22 +23,14 @@ const lister = (arg) => {
                 texteListeTemp += construireTR(unPermis);
                 combien++;
             }
-            
             texteListe += construireEntetes();
             texteListe += "Il y a <b>" + combien + "</b> résultats :<br><br>";
             texteListe += texteListeTemp;
             texteListe += "</tbody></table>";
-            
             document.getElementsByClassName('container')[0].innerHTML = texteListe;
         },
-        fail: (e) => {
-            alert(`Erreur!\nLe fichier source des permis n'a pu être chargé.\nRaison:\n${e.message}`);
-        }
-        
+        fail: (e) => { alert(`Erreur!\nLe fichier source des permis n'a pu être chargé.\nRaison:\n${e.message}`); }
     });
-    // if (typeL == "animal") {
-    //     console.log("fin commande lister()");
-    // }
 }
 
 const construireEntetes = () => {
@@ -93,3 +62,8 @@ const construireTR = (unPermis) =>{
     </tr>`;
     return tr;
 }
+
+const popover = new bootstrap.Popover('.popover-dismiss', {
+    trigger: 'focus'
+  })
+  

@@ -20,29 +20,20 @@ exp.get('/', function(req, res) {
   res.sendFile(path.join(__dirname + '/public/index.html'))
 });
 
-exp.post('/tous', function(req, res) {
-  res.sendFile(path.join(__dirname + "/serveur/donnees/permis-animaux.json"));
-});
-
-exp.post('/animal', function(req, res) {
-  let json = require(path.join(__dirname + "/serveur/donnees/permis-animaux.json"));
+exp.post('/permis', function(req, res) {
   const key = req.body.key;
-  const value = req.body.value;
-  res.send(json.filter(d => d[key] === value));
-  
-});
-
-exp.post('/ville', function(req, res) {
+  if (key == "tous") res.sendFile(path.join(__dirname + "/serveur/donnees/permis-animaux.json"));
   let json = require(path.join(__dirname + "/serveur/donnees/permis-animaux.json"));
-  const key = req.body.key;
   const value = req.body.value;
-  res.send(json.filter(d => d[key] === value));
-});
-
-exp.post('/expire', function(req, res) {
-  res.sendFile(path.join(__dirname + "/serveur/donnees/permis-animaux.json"));
-});
-
-exp.post('/tries', function(req, res) {
-  res.sendFile(path.join(__dirname + "/serveur/donnees/permis-animaux.json"));
+  if (key == "animal") res.send(json.filter(d => d["Animal_Type_de_permis"].localeCompare(value, undefined, { sensitivity: 'base' }) == 0));
+  if (key == "ville") res.send(json.filter(d => d["Gardien_Territoire_ex_villes"].localeCompare(value, undefined, { sensitivity: 'base' }) == 0));
+  if (key == "expire") {
+    let anR = req.body.an;
+    let moisR = req.body.mois;
+    res.send(json.filter(d => {
+      let dateJ = d["Permis_Date_de_fin"].split("-");
+      if ((dateJ[0] == anR) && (dateJ[1] == moisR)) { return true; }
+    }));
+  }
+  if (key == "tries") res.send(json.sort(function (a, b) { return a["Animal_Type_de_permis"].localeCompare(b["Animal_Type_de_permis"]); }));
 });
