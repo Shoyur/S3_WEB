@@ -2,9 +2,10 @@ const listerPermis = (arg) => {
 
     let spec = {};
     spec['tous'] = function() { spec = { key: "tous" }; };
-    spec['animal'] = function() { spec = { key: arg, value: prompt("Entrez un animal :") }; };
-    spec['ville'] = function() { spec = { key: arg, value: prompt("Entrez une ville :") }; };
-    spec['expire'] = function() { spec = { key: arg, an: prompt("Entrez une année :"), mois: prompt("Entrez un mois :") }; };
+    spec['animal'] = function() { spec = { key: arg, value: document.getElementById('inputAnimal').value }; };
+    spec['ville'] = function() { spec = { key: arg, value: document.getElementById('inputVille').value }; };
+    spec['expire'] = function() { spec = { key: arg, an: document.getElementById('inputAnnee').value, 
+                                                    mois: document.getElementById('inputMois').value }; };
     spec['tries'] = function() { spec = { key: "tries" }; };
     spec[arg]();
 
@@ -63,7 +64,85 @@ const construireTR = (unPermis) =>{
     return tr;
 }
 
-const popover = new bootstrap.Popover('.popover-dismiss', {
-    trigger: 'focus'
-  })
+
+
+
+
+const buttonAnimalClick = () => {
+    hideAll();
+    document.getElementById('inputAnimal').style.display = 'block'
+    document.getElementById('buttonGoAnimal').style.display = 'block'; 
+}
+
+const buttonVilleClick = () => {
+    hideAll();
+    document.getElementById('inputVille').style.display = 'block';
+    document.getElementById('buttonGoVille').style.display = 'block';
+}
+
+const buttonExpireClick = () => {
+    hideAll();
+    document.getElementById('inputMois').style.display = 'block';
+    document.getElementById('inputAnnee').style.display = 'block';
+    document.getElementById('buttonGoExpire').style.display = 'block';
+}
+
+const hideAll = () => {
+    document.getElementById('inputAnimal').style.display = 'none';
+    document.getElementById('inputAnimal').value = '';
+    document.getElementById('buttonGoAnimal').style.display = 'none';
+    document.getElementById('inputVille').style.display = 'none';
+    document.getElementById('inputVille').value = '';
+    document.getElementById('buttonGoVille').style.display = 'none';
+    document.getElementById('inputMois').style.display = 'none';
+    document.getElementById('inputMois').value = '';
+    document.getElementById('inputAnnee').style.display = 'none';
+    document.getElementById('inputAnnee').value = '';
+    document.getElementById('buttonGoExpire').style.display = 'none';
+}
+
+const buttonAnimal = document.getElementById('buttonAnimal');
+const buttonVille = document.getElementById('buttonVille');
+const buttonExpire = document.getElementById('buttonExpire');
+
+const inputAnimal = document.getElementById('inputAnimal');
+const buttonGoAnimal = document.getElementById('buttonGoAnimal');
+const inputVille = document.getElementById('inputVille');
+const buttonGoVille = document.getElementById('buttonGoVille');
+const inputMois = document.getElementById('inputMois');
+const inputAnnee = document.getElementById('inputAnnee');
+const buttonGoExpire = document.getElementById('buttonGoExpire');
+
+inputAnimal.addEventListener('keydown', function(e) { 
+    if (e.key === 'Enter') { listerPermis('animal'); } 
+});
+inputVille.addEventListener('keydown', function(e) { 
+    if (e.key === 'Enter') { listerPermis('ville'); } 
+});
+inputAnnee.addEventListener('keydown', function(e) { 
+    if (e.key === 'Enter') { listerPermis('expire'); } 
+});
+inputMois.addEventListener('keydown', function(e) { 
+    if (e.key === 'Enter') { listerPermis('expire'); } 
+});
+
+document.addEventListener('click', function(e) {
+    if (!inputAnimal.contains(e.target)
+        && !buttonGoAnimal.contains(e.target)
+        && !inputVille.contains(e.target)
+        && !buttonGoVille.contains(e.target)
+        && !inputMois.contains(e.target)
+        && !inputAnnee.contains(e.target)
+        && !buttonGoExpire.contains(e.target)
+
+        && !buttonAnimal.contains(e.target)
+        && !buttonVille.contains(e.target)
+        && !buttonExpire.contains(e.target)
+        ) 
+        {
+        hideAll();
+    }
+});
+
+
   
