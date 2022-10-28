@@ -70,8 +70,9 @@ const construireTR = (unPermis) =>{
 
 const buttonAnimalClick = () => {
     hideAll();
-    document.getElementById('inputAnimal').style.display = 'block'
-    document.getElementById('buttonGoAnimal').style.display = 'block'; 
+    document.getElementById('inputAnimal').style.display = 'block';
+    // $('inputAnimal').fadeIn();
+    document.getElementById('buttonGoAnimal').style.display = 'block';
 }
 
 const buttonVilleClick = () => {
@@ -89,6 +90,7 @@ const buttonExpireClick = () => {
 
 const hideAll = () => {
     document.getElementById('inputAnimal').style.display = 'none';
+    // $('inputAnimal').fadeOut();
     document.getElementById('inputAnimal').value = '';
     document.getElementById('buttonGoAnimal').style.display = 'none';
     document.getElementById('inputVille').style.display = 'none';
