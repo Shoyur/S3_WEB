@@ -21,18 +21,18 @@
     <!-- Barre de navigation -->
     <nav class="navbar navbar-expand-lg bgnavbarperso navcustom">
         <ul class="navbar-nav">
-            <li class="nav-item"><button id="b1" type="button" class="btn btn-secondary btn-smaller" onclick="listerPermis('tous');">Tous les permis</button></li>
+            <li class="nav-item">
+                <button id="b1" type="button" class="btn btn-secondary btn-smaller" onclick="listerPermis('tous');">Tous les permis</button>
+            </li>
 
-            <!-- <li class="nav-item"><button id="b2" type="button" class="btn btn-secondary btn-smaller" onclick="listerPermis('animal');">Filtre > Animal</button></li> -->
             <li>
                 <button id="buttonAnimal" type="button" class="btn btn-secondary btn-smaller" onclick="buttonAnimalClick();">Filtre > Animal</button>
                 <div class="form-inline">
-                    <input id="inputAnimal" type="text" class="form-control mr-1 input-c" placeholder="Entrez un animal">
+                    <input id="inputAnimal" type="text" class="form-control mr-1 input-c fadein" placeholder="Entrez un animal">
                     <button id="buttonGoAnimal" type="button" class="btn btn-secondary butt-go" onclick="listerPermis('animal');">Go</button>
                 </div>
             </li>
-            
-            <!-- <li class="nav-item"><button id="b3" type="button" class="btn btn-secondary btn-smaller" onclick="listerPermis('ville');">Filtre > Ville</button></li> -->
+
             <li>
                 <button id="buttonVille" type="button" class="btn btn-secondary btn-smaller" onclick="buttonVilleClick();">Filtre > Ville</button>
                 <div class="form-inline">
@@ -41,7 +41,6 @@
                 </div>
             </li>
 
-            <!-- <li class="nav-item"><button id="b4" type="button" class="btn btn-secondary btn-smaller" onclick="listerPermis('expire');">Filtre > Expiration</button></li> -->
             <li>
                 <button id="buttonExpire" type="button" class="btn btn-secondary btn-smaller" onclick="buttonExpireClick();">Filtre > Expiration</button>
                 <div class="form-inline">
@@ -51,8 +50,9 @@
                 </div>
             </li>
 
-
-            <li class="nav-item"><button id="b5" type="button" class="btn btn-secondary btn-smaller" onclick="listerPermis('tries');">Triés > Animal</button></li>
+            <li class="nav-item">
+                <button id="b5" type="button" class="btn btn-secondary btn-smaller" onclick="listerPermis('tries');">Triés > Animal</button>
+            </li>
 
         </ul>
 
