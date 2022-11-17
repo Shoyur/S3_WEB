@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Examen 2 - Bibliothèque d'étudiants.</title>
+
+    <link rel="stylesheet" href="utilitaires/bootstrap-5.2.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="utilitaires/jquery-3.6.0.min.js"></script>
+    <script src="utilitaires/bootstrap-5.2.2-dist/js/bootstrap.min.js"></script>
+
+    <script defer src="js/global.js"></script>
+</head>
+    
+<body>
+    <!-- Barre de navigation -->
+    <nav class="navbar navbar-expand-lg bgnavbarperso navcustom">
+        <ul class="navbar-nav">
+            <img class="index-nav-logo" src="/images/logo.png">
+            <span class = index-nav-title>Super Étudiants</span>
+            <li class="nav-item">
+                <button id="b1" type="button" class="btn btn-secondary btn-smaller" onclick="listerEtudiants('tous');">Lister</button>
+            </li>
+            <li>
+                <button id="buttonVille" type="button" class="btn btn-secondary btn-smaller" onclick="buttonVilleClick();">Par ville</button>
+                <div class="form-inline">
+                    <input id="inputVille" type="text" class="form-control mr-1 input-c" placeholder="Entrez une ville">
+                    <button id="buttonGoVille" type="button" class="btn btn-secondary butt-go" onclick="listerEtudiants('ville');">Go</button>
+                </div>
+            </li>
+            <li>
+                <button id="buttonDiscipline" type="button" class="btn btn-secondary btn-smaller" onclick="buttonDisciplineClick();">Moy Age Discipline</button>
+                <div class="form-inline">
+                    <input id="inputDiscipline" type="text" class="form-control mr-1 input-c" placeholder="Entrez une discipline">
+                    <button id="buttonGoDiscipline" type="button" class="btn btn-secondary butt-go" onclick="afficherMoy();">Go</button>
+                </div>
+            </li>
+
+        </ul>
+
+    </nav>
+    <!-- Fin barre de navigation -->
+    <h3 class="texteMoy" id="texteMoy">Âge moyenne pour la discipline xxxxx est de xx.xx</h3>
+    <div id="contenu-d" class="container contenu-c">
+        <div id="contenu"></div>
+    </div>
+
+</body>
+</html>
