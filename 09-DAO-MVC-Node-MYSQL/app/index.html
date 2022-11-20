@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	
+	<meta charset="UTF-8">
+	
+	<meta http-equiv="Pragma" content="no_cache" />
+	<script src="public/ressources/js/jquery-3.2.1.min.js"></script>
+	<script src="public/ressources/js/general.js"></script>
+	<script src="public/Film/controleurRequetesFilms.js"></script>
+	<script src="public/Film/controleurViewFilms.js"></script>
+	<script src="public/ressources/js/valider.js"></script>
+	<link rel="stylesheet" href="public/ressources/css/w3.css">
+	<link rel="stylesheet" href="public/ressources/css/film.css">
+	<link rel="stylesheet" href="public/ressources/css/font-awesome-4.7.0/css/font-awesome.min.css">
+</head>
+<body onLoad="dateHeure('dh');">
+<div id="logo">
+	<img class="fleft"src="public/ressources/images/logo1.jpg">
+	<h4 class="fleft w3-text-blue">Vidéothèque<br>Sympa</h4>
+</div>
+<div class="w3-container">
+
+<div id="menu" style="margin-top:-55px;padding-left:400px;">
+	<button class="w3-btn w3-green w3-ripple" onClick="obtenirFormFilms('enregistrer');"><i class="fa fa-plus-square-o"></i> Nouveau film</button>
+	<button class="w3-btn w3-green w3-ripple" onClick="requetesServeurFilms('lister');"><i class="fa fa-clone"></i> Liste des films</button>
+	<button class="w3-btn w3-green w3-ripple" onClick="obtenirFormEnleverFilm();"><i class="fa fa-remove"></i> Enlever film</button>
+	<button class="w3-btn w3-green w3-ripple" onClick="obtenirFormModifierFilm('fiche');"><i class="fa fa-edit"></i> Modifier film</button>
+	<span id="dh"></span>
+	<span class="w3-text-red" style="float:right;padding-right:30px;margin-top:-12px;" id="message"></span>
+</div>
+<br>
+<div id="fenetre" style="padding-left:35px;display:none;">
+	<div id="header" style="float:right;" onClick="$('#fenetre').hide();"><img src="public/ressources/images/close.png"></div>
+	<div id="contenu"></div>
+</div>
+<!-- <div id="message" style="position:absolute;top:3%;left:80%"></div> -->
+</div>
+</body>
+</html>
