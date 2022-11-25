@@ -1,16 +1,12 @@
 import express = require('express');
-import { NextFunction } from "express";
-import { Request } from "express";
-import { Response } from "express";
-import http = require('http');
+import { Request, Response, NextFunction } from "express";
 import bodyParser = require('body-parser');
 import path = require("path");
 import { ControleurPermis } from './app/serveur/Permis/ControleurPermis';
 
 const app = express();
-let server = http.createServer(app);
 let port = 8282;
-server.listen(port);
+app.listen(port);
 console.log(`Serveur démarré sur le port ${port}`);
 app.enable('trust proxy');
 
@@ -24,7 +20,7 @@ app.get('/', async (req:Request, res:Response)=>{
 	res.sendFile(path.join(__dirname, '/app/index.html'));
 });
 
-app.all('/permis', async (req:Request, res:Response, next:NextFunction)=>{
+app.all('/permis', async (req:Request, res:Response, next:NextFunction) => {
 	try {
 		let reponse = await ControleurPermis.getControleurPermis().determinerAction(req);
 		res.header('Content-type','application/json');
@@ -34,6 +30,6 @@ app.all('/permis', async (req:Request, res:Response, next:NextFunction)=>{
 	catch(err) { next(err); }
 });
 
-app.use(( err: Error, req: Request, res: Response, next: NextFunction ) : void =>{
+app.use(( err: Error, req: Request, res: Response, next: NextFunction ) : void => {
 	console.log(err);
 });

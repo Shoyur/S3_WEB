@@ -12,9 +12,9 @@ import { ControleurFilm } from './app/serveur/Film/ControleurFilm';
 let upload = multer({ dest: 'app/serveur/uploads' });
 
 const app = express();
-let server = http.createServer(app);
+// let server = http.createServer(app);
 let porte = 8282;
-server.listen(porte);
+app.listen(porte);
 console.log(`Serveur démarré sur la porte ${porte}`);
 app.enable('trust proxy');
 
