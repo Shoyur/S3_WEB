@@ -1,0 +1,8 @@
+{
+	"users": [
+	    {"code":123,"nom":"Antonio","apiKey":"abcd","niveau":1},
+		{"code":456,"nom":"Marie","apiKey":"efgh","niveau":2},
+		{"code":789,"nom":"Marc","apiKey":"ijkl", "niveau":1},
+		{"code":111,"nom":"Marcie","apiKey":"mnop","niveau":2}
+	]
+}
