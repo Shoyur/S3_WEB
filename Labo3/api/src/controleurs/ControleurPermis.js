@@ -5,6 +5,8 @@ const env_vars = require("../utilitaires/env_vars");
 // Permet  de générer des clés voir sur Google : npm uuid
 const { v4: uuidv4 } = require('uuid');
 const url = require("url");
+
+
 const getAllPermis = (req, res) => {
   // apiKeys=[uuidv4(),"abcd"]; //uuidv4() pour générer des clés
   // Du module url on va faire appel à req.query.apiKey pour obtenir le apiKey
@@ -25,9 +27,9 @@ const getPermis = (req, res) => {
   const apiKeyOK = outils.testApiKey(req.query.apiKey);
   try {
       if (apiKeyOK) {
-        const idf = req.params.id;
-        if (!idf) { res.send(env_vars.MSG_INTROUVABLE); }
-        const lePermis = servicePermis.getPermis(idf);
+        const numero = req.params.id;
+        if (!numero) { res.send(env_vars.MSG_INTROUVABLE); }
+        const lePermis = servicePermis.getPermis(numero);
         res.send({ status: "OK", donnees: lePermis });
       } 
       else { res.send(env_vars.MSG_API_NOK); }
@@ -55,42 +57,35 @@ const creerPermis = (req, res) => {
       } 
       else { res.send(env_vars.MSG_API_NOK); }
   }
-  catch (e) { res.send(env_vars.MSG_GRAVE); }   
+  catch(e) { res.send(env_vars.MSG_GRAVE); }   
 }
 
 const modifierPermis = (req, res) => {
   const apiKeyOK = outils.testApiKey(req.query.apiKey);
   try {
       if (apiKeyOK) {
-          const idf = req.params.id;
-          if (!idf) { res.send(env_vars.MSG_INTROUVABLE); }
-          const lePermis = servicePermis.modifierPermis(idf, req);
+          const numero = req.params.id;
+          if (!numero) { res.send(env_vars.MSG_INTROUVABLE); }
+          const lePermis = servicePermis.modifierPermis(numero, req);
           res.send({ status: "OK", donnees: lePermis });
-      } else {
-        res.send(env_vars.MSG_API_NOK);
-      }
-  } catch(e){
-    res.send(env_vars.MSG_GRAVE);
-  }   
-};
+      } 
+      else { res.send(env_vars.MSG_API_NOK); }
+  } catch(e) { res.send(env_vars.MSG_GRAVE); }   
+}
 
 const supprimerPermis = (req, res) => {
   const apiKeyOK = outils.testApiKey(req.query.apiKey);
   try {
-      if(apiKeyOK){
-        const idf = req.params.id;
-        if (!idf) {
-          res.send(env_vars.MSG_INTROUVABLE);
-        }
-        const lePermis = servicePermis.supprimerPermis(idf);
+      if (apiKeyOK) {
+        const numero = req.params.id;
+        if (!numero) { res.send(env_vars.MSG_INTROUVABLE); }
+        const lePermis = servicePermis.supprimerPermis(numero);
         res.send({ status: "OK", donnees: lePermis });
-      } else {
-        res.send(env_vars.MSG_API_NOK);
-      }
-  } catch(e){
-    res.send(env_vars.MSG_GRAVE);
-  }   
-};
+      } 
+      else { res.send(env_vars.MSG_API_NOK); }
+  } 
+  catch(e) { res.send(env_vars.MSG_GRAVE); }   
+}
 
 module.exports = {
   getAllPermis,

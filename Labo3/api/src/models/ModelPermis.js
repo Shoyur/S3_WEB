@@ -5,24 +5,24 @@ const env_vars = require("../utilitaires/env_vars");
 
 const getAllFilms = () => {
   return bd.films;
-};
+}
 
-const getFilm = (idf) => {
-  const leFilm = bd.films.find((unFilm) => unFilm.idf == idf);
+const getFilm = (numero) => {
+  const leFilm = bd.films.find((unFilm) => unFilm.numero == numero);
   if (!leFilm) {
     return env_vars.MSG_INTROUVABLE;
   }
   return leFilm;
-};
+}
 
 const creerFilm = (film) => {
   bd.films.push(film);
   outils.sauvegarderDansBdfilms(bd);
 }
 
-const modifierFilm = (idf, req) => {
-const indexFilmModifier = bd.films.findIndex(
-      (unFilm) => unFilm.idf == idf
+const modifierFilm = (numero, req) => {
+  const indexFilmModifier = bd.films.findIndex(
+      (unFilm) => unFilm.numero == numero
     );
     if (indexFilmModifier == -1) {
       return env_vars.MSG_INTROUVABLE;
@@ -50,9 +50,9 @@ const indexFilmModifier = bd.films.findIndex(
     return filmModifie;
 }
 
-const supprimerFilm = (idf) => {
+const supprimerFilm = (numero) => {
   const indexFilmSupprimer = bd.films.findIndex(
-      (unFilm) => unFilm.idf == idf);
+      (unFilm) => unFilm.numero == numero);
     if (indexFilmSupprimer == -1) {
       return env_vars.MSG_INTROUVABLE;
     }
@@ -66,4 +66,4 @@ module.exports = {
   getFilm,
   modifierFilm,
   supprimerFilm
-};
+}

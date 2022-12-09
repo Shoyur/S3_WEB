@@ -4,20 +4,20 @@ const getAllPermis = () => {
   return modelPermis.getAllPermis();
 };
 
-const getPermis = (idf) => {
-  return modelPermis.getPermis(idf);
+const getPermis = (numero) => {
+  return modelPermis.getPermis(numero);
 };
 
 const creerPermis = (permis) => {
   modelPermis.creerPermis(permis);
 };
 
-const modifierPermis = (idf, req) => {
-  return modelPermis.modifierPermis(idf, req);
+const modifierPermis = (numero, req) => {
+  return modelPermis.modifierPermis(numero, req);
 };
 
-const supprimerPermis = (idf) => {
-  return modelPermis.supprimerPermis(idf);
+const supprimerPermis = (numero) => {
+  return modelPermis.supprimerPermis(numero);
 };
 
 module.exports = {
