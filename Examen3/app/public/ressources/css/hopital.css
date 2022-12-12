@@ -1,0 +1,32 @@
+hr{
+    height: 12px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+}
+.fleft{
+	float:left;
+}
+#logo{
+	padding-left:10px;
+    padding-right: 10px;
+}
+#dh{
+	padding-left:20px;
+}
+
+.bg_index {
+    background-image: url('../images/background.jpg');
+    margin: 0 auto;
+    text-transform: none;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    background-attachment: fixed;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    white-space: nowrap;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    pointer-events: auto;
+}
