@@ -3,7 +3,8 @@ import sha1 = require("sha1");
 
 // import { Permis } from "./Permis";
 import { IDaoPermis } from "./IDaoPermis";
-import { Connexion } from "./../bd/Connexion";
+// import { Connexion } from "./../bd/Connexion";
+import https = require("https");
 
 export class DaoPermis implements IDaoPermis {
 
@@ -26,75 +27,48 @@ export class DaoPermis implements IDaoPermis {
   }
 
   // Read
-  public async MdlP_GetAll(): Promise<object> {
-    const requette = "SELECT * FROM Permis";
-    let reponse;
-    try {
-      let maConnexion = await Connexion.getInstanceConnexion().getConnexionBD();
-      reponse = await maConnexion.execute(requette);
-      return reponse[0]; // Formet de reponse [[les Permis], autres informations retournées]
-    } 
-    catch (e) { 
+  public async MdlP_GetAll(): Promise<any> {
+    https.get('localhost:4000/api/v1/permis/ /apod?api_key=DEMO_KEY', (res) => {
+      let data = '';
+      res.on('data', (chunk) => { data += chunk; });
+      res.on('end', () => { return JSON.parse(data).explanation });
+    }).on("error", (e) => { 
       console.log("Erreur: ", e);
-      return [];
-    }
+      return []; 
+    });
   }
 
-  public async MdlP_GetByAnimal(animal: string): Promise<object> {
-    const requette = "SELECT * FROM Permis WHERE Animal_Type_de_permis = ?";
-    let reponse;
-    try {
-      let maConnexion = await Connexion.getInstanceConnexion().getConnexionBD();
-      reponse = await maConnexion.execute(requette, [animal]);
-      return reponse[0]; // Formet de reponse [[les Permis], autres informations retournées]
-    } 
-    catch (e) { 
+  public async MdlP_GetByNumber(number: string): Promise<any> {
+    https.get('localhost:4000/api/v1/permis/ /apod?api_key=DEMO_KEY', (res) => {
+      let data = '';
+      res.on('data', (chunk) => { data += chunk; });
+      res.on('end', () => { return JSON.parse(data).explanation });
+    }).on("error", (e) => { 
       console.log("Erreur: ", e);
-      return [];
-    } 
+      return []; 
+    });
   } 
   
-  public async MdlP_GetByVille(ville: string): Promise<object> {
-    const requette = "SELECT * FROM Permis WHERE Gardien_Territoire_ex_villes = ?";
-    let reponse;
-    try {
-      let maConnexion = await Connexion.getInstanceConnexion().getConnexionBD();
-      reponse = await maConnexion.execute(requette, [ville]);
-      return reponse[0]; // Formet de reponse [[les Permis], autres informations retournées]
-    }  
-    catch (e) { 
+  public async MdlP_Create(body: object): Promise<any> {
+    https.get('localhost:4000/api/v1/permis/ /apod?api_key=DEMO_KEY', (res) => {
+      let data = '';
+      res.on('data', (chunk) => { data += chunk; });
+      res.on('end', () => { return JSON.parse(data).explanation });
+    }).on("error", (e) => { 
       console.log("Erreur: ", e);
-      return [];
-    }  
+      return []; 
+    });
   } 
   
-  public async MdlP_GetByDate(an: number, mois: number): Promise<object> {
-    const requette = "SELECT * FROM `permis` WHERE YEAR(Permis_Date_de_fin)=? AND MONTH(Permis_Date_de_fin)=?";
-    let reponse;
-    try {
-      let maConnexion = await Connexion.getInstanceConnexion().getConnexionBD();
-      reponse = await maConnexion.execute(requette, [an, mois]);
-      
-      return reponse[0]; // Formet de reponse [[les Permis], autres informations retournées]
-    }  
-    catch (e) { 
+  public async MdlP_Delete(number: string): Promise<any> {
+    https.get('localhost:4000/api/v1/permis/ /apod?api_key=DEMO_KEY', (res) => {
+      let data = '';
+      res.on('data', (chunk) => { data += chunk; });
+      res.on('end', () => { return JSON.parse(data).explanation });
+    }).on("error", (e) => { 
       console.log("Erreur: ", e);
-      return [];
-    }  
-  } 
-  
-  public async MdlP_GetAllTriees(): Promise<object> {
-    const requette = "SELECT * FROM Permis ORDER BY Animal_Type_de_permis";
-    let reponse;
-    try {
-      let maConnexion = await Connexion.getInstanceConnexion().getConnexionBD();
-      reponse = await maConnexion.execute(requette);
-      return reponse[0]; // Formet de reponse [[les Permis], autres informations retournées]
-    }  
-    catch (e) { 
-      console.log("Erreur: ", e);
-      return [];
-    }   
+      return []; 
+    });
   }  
   
 }

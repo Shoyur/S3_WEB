@@ -1,6 +1,7 @@
 import { IControleurPermis } from "./IControleurPermis";
 import { DaoPermis } from "./DaoPermis";
 import { Request } from "express";
+import { Permis } from "./Permis";
 
 export class ControleurPermis implements IControleurPermis {
 
@@ -29,35 +30,30 @@ export class ControleurPermis implements IControleurPermis {
     return await ControleurPermis.Dao_Instance.MdlP_GetAll();
   }
 
-  public async CtrP_GetByAnimal(animal: string): Promise<object> {
-    return await ControleurPermis.Dao_Instance.MdlP_GetByAnimal(animal);
+  public async CtrP_GetByNumber(number: string): Promise<object> {
+    return await ControleurPermis.Dao_Instance.MdlP_GetBynumber(number);
   }
 
-  public async CtrP_GetByVille(ville: string): Promise<object> {
-    return await ControleurPermis.Dao_Instance.MdlP_GetByVille(ville);
+  public async CtrP_Create(body: object): Promise<object> {
+    return await ControleurPermis.Dao_Instance.MdlP_Create(body);
   }
 
-  public async CtrP_GetByDate(an: number, mois: number): Promise<object> {
-    return await ControleurPermis.Dao_Instance.MdlP_GetByDate(an, mois);
+  public async CtrP_Delete(number: string): Promise<object> {
+    return await ControleurPermis.Dao_Instance.MdlP_Delete(number);
   }
 
-  public async CtrP_GetAllTriees(): Promise<object> {
-    return await ControleurPermis.Dao_Instance.MdlP_GetAllTriees();
-  }
 
   public async determinerAction(req: Request): Promise<object> {
     let key = req.body.key;
     switch (key) {
-      case "tous":
+      case "all":
         return await this.CtrP_GetAll();
-      case "animal":
-        return await this.CtrP_GetByAnimal(req.body.value);
-      case "ville":
-        return await this.CtrP_GetByVille(req.body.value);
-      case "expire":
-        return await this.CtrP_GetByDate(req.body.an, req.body.mois);
-      case "tries":
-        return await this.CtrP_GetAllTriees();
+      case "number":
+        return await this.CtrP_GetByNumber(req.body.value);
+      case "create":
+        return await this.CtrP_Create(req.body);
+      case "effacer":
+        return await this.CtrP_Delete(req.body.value);
       default:
         return { msg: "Action invalide!" };
     }

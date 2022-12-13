@@ -12,10 +12,6 @@ const creerPermis = (permis) => {
   modelPermis.creerPermis(permis);
 };
 
-const modifierPermis = (numero, req) => {
-  return modelPermis.modifierPermis(numero, req);
-};
-
 const supprimerPermis = (numero) => {
   return modelPermis.supprimerPermis(numero);
 };
@@ -24,6 +20,5 @@ module.exports = {
   getAllPermis,
   getPermis,
   creerPermis,
-  modifierPermis,
   supprimerPermis
 };

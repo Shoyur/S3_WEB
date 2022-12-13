@@ -25,36 +25,31 @@
     <nav class="navbar navbar-expand-lg bgnavbarperso navcustom">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <button id="b1" type="button" class="btn btn-secondary btn-smaller" onclick="listerPermis('tous');">Tous les permis</button>
+                <button id="b1" type="button" class="btn btn-secondary btn-smaller" onclick="listerPermis('all');">Tous les permis</button>
             </li>
 
             <li>
-                <button id="buttonAnimal" type="button" class="btn btn-secondary btn-smaller" onclick="buttonAnimalClick();">Filtre > Animal</button>
+                <button id="buttonNumber" type="button" class="btn btn-secondary btn-smaller" onclick="buttonNumberClick();">Numéro</button>
                 <div class="form-inline">
-                    <input id="inputAnimal" type="text" class="form-control mr-1 input-c fadein" placeholder="Entrez un animal">
-                    <button id="buttonGoAnimal" type="button" class="btn btn-secondary butt-go" onclick="listerPermis('animal');">Go</button>
+                    <input id="inputNumber" type="text" class="form-control mr-1 input-c fadein" placeholder="Entrez un numéro">
+                    <button id="buttonGoNumber" type="button" class="btn btn-secondary butt-go" onclick="listerPermis('number');">Go</button>
                 </div>
             </li>
 
             <li>
-                <button id="buttonVille" type="button" class="btn btn-secondary btn-smaller" onclick="buttonVilleClick();">Filtre > Ville</button>
+                <button id="buttonCreate" type="button" class="btn btn-secondary btn-smaller" onclick="buttonCreateClick();">Créer</button>
                 <div class="form-inline">
-                    <input id="inputVille" type="text" class="form-control mr-1 input-c" placeholder="Entrez une ville">
-                    <button id="buttonGoVille" type="button" class="btn btn-secondary butt-go" onclick="listerPermis('ville');">Go</button>
+                    <input id="inputCreate" type="text" class="form-control mr-1 input-c" placeholder="Entrez une Create">
+                    <button id="buttonGoCreate" type="button" class="btn btn-secondary butt-go" onclick="listerPermis('Create');">Go</button>
                 </div>
             </li>
 
             <li>
-                <button id="buttonExpire" type="button" class="btn btn-secondary btn-smaller" onclick="buttonExpireClick();">Filtre > Expiration</button>
+                <button id="buttonDelete" type="button" class="btn btn-secondary btn-smaller" onclick="buttonDeleteClick();">Supprimer</button>
                 <div class="form-inline">
-                    <input id="inputAnnee" type="text" class="form-control mr-1 input-c input-c2" placeholder="Annee">
-                    <input id="inputMois" type="text" class="form-control mr-1 input-c input-c2" placeholder="Mois">
-                    <button id="buttonGoExpire" type="button" class="btn btn-secondary butt-go" onclick="listerPermis('expire');">Go</button>
+                    <input id="inputNumberD" type="text" class="form-control mr-1 input-c fadein" placeholder="Entrez un numéro">
+                    <button id="buttonGoDelete" type="button" class="btn btn-secondary butt-go" onclick="listerPermis('delete');">Go</button>
                 </div>
-            </li>
-
-            <li class="nav-item">
-                <button id="b5" type="button" class="btn btn-secondary btn-smaller" onclick="listerPermis('tries');">Triés > Animal</button>
             </li>
 
         </ul>
