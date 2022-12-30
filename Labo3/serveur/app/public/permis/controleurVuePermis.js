@@ -1,40 +1,4 @@
-﻿const listerPermis = (arg) => {
-
-    let spec = {};
-    spec['tous'] = function() { spec = { key: "tous" }; };
-    spec['animal'] = function() { spec = { key: arg, value: document.getElementById('inputAnimal').value }; };
-    spec['ville'] = function() { spec = { key: arg, value: document.getElementById('inputVille').value }; };
-    spec['expire'] = function() { spec = { key: arg, an: document.getElementById('inputAnnee').value, 
-                                                    mois: document.getElementById('inputMois').value }; };
-    spec['tries'] = function() { spec = { key: "tries" }; };
-    spec[arg]();
-
-    $.ajax({
-        url: '/permis',
-        type: "POST",
-        data: spec,
-        dataType: 'json',
-        async: true,
-        success: (listePermis) => {
-            let combien = 0;
-            if (listePermis == null) { return; }
-            let texteListe = "";
-            let texteListeTemp = "";
-            for (let unPermis of listePermis) { 
-                texteListeTemp += construireTR(unPermis);
-                combien++;
-            }
-            texteListe += construireEntetes();
-            texteListe += "Il y a <b>" + combien + "</b> résultats :<br><br>";
-            texteListe += texteListeTemp;
-            texteListe += "</tbody></table>";
-            document.getElementsByClassName('container')[0].innerHTML = texteListe;
-        },
-        fail: (e) => { alert(`Erreur!\nLe fichier source des permis n'a pu être chargé.\nRaison:\n${e.message}`); }
-    });
-}
-
-const construireEntetes = () => {
+﻿const construireEntetes = () => {
     const entete = `
         <table class="table table-striped">
             <thead>
@@ -64,78 +28,123 @@ const construireTR = (unPermis) =>{
     return tr;
 }
 
-const buttonAnimalClick = () => {
+const buttonCreateUClick = () => {
     hideAll();
-    document.getElementById('inputAnimal').style.display = 'block';
-    document.getElementById('buttonGoAnimal').style.display = 'block';
+    document.getElementById('inputCreateUNom').style.display = 'block';
+    document.getElementById('inputCreateUPrenom').style.display = 'block';
+    document.getElementById('inputCreateUCourriel').style.display = 'block';
+    document.getElementById('inputCreateUPass').style.display = 'block';
+    document.getElementById('buttonGoCreateU').style.display = 'block';
 }
 
-const buttonVilleClick = () => {
+const buttonCreatePClick = () => {
     hideAll();
-    document.getElementById('inputVille').style.display = 'block';
-    document.getElementById('buttonGoVille').style.display = 'block';
+    document.getElementById('inputCreatePVille').style.display = 'block';
+    document.getElementById('inputCreatePEspece').style.display = 'block';
+    document.getElementById('inputCreatePNom').style.display = 'block';
+    document.getElementById('buttonGoCreateP').style.display = 'block';
 }
 
-const buttonExpireClick = () => {
+const buttonNumberClick = () => {
     hideAll();
-    document.getElementById('inputMois').style.display = 'block';
-    document.getElementById('inputAnnee').style.display = 'block';
-    document.getElementById('buttonGoExpire').style.display = 'block';
+    document.getElementById('inputNumberL').style.display = 'block';
+    document.getElementById('buttonGoNumber').style.display = 'block';
 }
+
+const buttonDeleteClick = () => {
+    hideAll();
+    document.getElementById('inputNumberD').style.display = 'block';
+    document.getElementById('buttonGoDelete').style.display = 'block';
+}
+
 
 const hideAll = () => {
-    document.getElementById('inputAnimal').style.display = 'none';
-    document.getElementById('inputAnimal').value = '';
-    document.getElementById('buttonGoAnimal').style.display = 'none';
-    document.getElementById('inputVille').style.display = 'none';
-    document.getElementById('inputVille').value = '';
-    document.getElementById('buttonGoVille').style.display = 'none';
-    document.getElementById('inputMois').style.display = 'none';
-    document.getElementById('inputMois').value = '';
-    document.getElementById('inputAnnee').style.display = 'none';
-    document.getElementById('inputAnnee').value = '';
-    document.getElementById('buttonGoExpire').style.display = 'none';
+    document.getElementById('inputCreateUNom').style.display = 'none';
+    document.getElementById('inputCreateUNom').value = '';
+    document.getElementById('inputCreateUPrenom').style.display = 'none';
+    document.getElementById('inputCreateUPrenom').value = '';
+    document.getElementById('inputCreateUCourriel').style.display = 'none';
+    document.getElementById('inputCreateUCourriel').value = '';
+    document.getElementById('inputCreateUPass').style.display = 'none';
+    document.getElementById('inputCreateUPass').value = '';
+    document.getElementById('buttonGoCreateU').style.display = 'none';
+
+    document.getElementById('inputCreatePVille').style.display = 'none';
+    document.getElementById('inputCreatePVille').value = '';
+    document.getElementById('inputCreatePEspece').style.display = 'none';
+    document.getElementById('inputCreatePEspece').value = '';
+    document.getElementById('inputCreatePNom').style.display = 'none';
+    document.getElementById('inputCreatePNom').value = '';
+    document.getElementById('buttonGoCreateP').style.display = 'none';
+
+    document.getElementById('inputNumberL').style.display = 'none';
+    document.getElementById('inputNumberL').value = '';
+    document.getElementById('buttonGoNumber').style.display = 'none';
+
+    document.getElementById('inputNumberD').style.display = 'none';
+    document.getElementById('inputNumberD').value = '';
+    document.getElementById('buttonGoDelete').style.display = 'none';
 }
 
-const buttonAnimal = document.getElementById('buttonAnimal');
-const buttonVille = document.getElementById('buttonVille');
-const buttonExpire = document.getElementById('buttonExpire');
 
-const inputAnimal = document.getElementById('inputAnimal');
-const buttonGoAnimal = document.getElementById('buttonGoAnimal');
-const inputVille = document.getElementById('inputVille');
-const buttonGoVille = document.getElementById('buttonGoVille');
-const inputMois = document.getElementById('inputMois');
-const inputAnnee = document.getElementById('inputAnnee');
-const buttonGoExpire = document.getElementById('buttonGoExpire');
+const buttonCreateU = document.getElementById('buttonCreateU');
+const inputCreateUNom = document.getElementById('inputCreateUNom');
+const inputCreateUPrenom = document.getElementById('inputCreateUPrenom');
+const inputCreateUCourriel = document.getElementById('inputCreateUCourriel');
+const inputCreateUPass = document.getElementById('inputCreateUPass');
+const buttonGoCreateU = document.getElementById('buttonGoCreateU');
 
-inputAnimal.addEventListener('keydown', function(e) { 
-    if (e.key === 'Enter') { listerPermis('animal'); } 
-});
-inputVille.addEventListener('keydown', function(e) { 
-    if (e.key === 'Enter') { listerPermis('ville'); } 
-});
-inputAnnee.addEventListener('keydown', function(e) { 
-    if (e.key === 'Enter') { listerPermis('expire'); } 
-});
-inputMois.addEventListener('keydown', function(e) { 
-    if (e.key === 'Enter') { listerPermis('expire'); } 
-});
+const inputApikey = document.getElementById('inputApikey');
+
+const buttonCreateP = document.getElementById('buttonCreateP');
+const inputCreatePVille = document.getElementById('inputCreatePVille');
+const inputCreatePEspece = document.getElementById('inputCreatePEspece');
+const inputCreatePNom = document.getElementById('inputCreatePNom');
+const buttonGoCreateP = document.getElementById('buttonGoCreateP');
+
+const buttonListerAll = document.getElementById('buttonListerAll')
+
+const buttonNumber = document.getElementById('buttonNumber');
+const inputNumberL = document.getElementById('inputNumberL');
+const buttonGoNumber = document.getElementById('buttonGoNumber');
+
+const buttonDelete = document.getElementById('buttonDelete');
+const inputNumberD = document.getElementById('inputNumberD');
+const buttonGoDelete = document.getElementById('buttonGoDelete');
+
+
+// unInput.addEventListener('keydown', function(e) { 
+//     if (e.key === 'Enter') { uneFonction(); } 
+// });
+
 
 document.addEventListener('click', function(e) {
-    if (!inputAnimal.contains(e.target)
-        && !buttonGoAnimal.contains(e.target)
-        && !inputVille.contains(e.target)
-        && !buttonGoVille.contains(e.target)
-        && !inputMois.contains(e.target)
-        && !inputAnnee.contains(e.target)
-        && !buttonGoExpire.contains(e.target)
+    if (!buttonCreateU.contains(e.target)
+        && !inputCreateUNom.contains(e.target)
+        && !inputCreateUPrenom.contains(e.target)
+        && !inputCreateUCourriel.contains(e.target)
+        && !inputCreateUPass.contains(e.target)
+        && !buttonGoCreateU.contains(e.target)
 
-        && !buttonAnimal.contains(e.target)
-        && !buttonVille.contains(e.target)
-        && !buttonExpire.contains(e.target)
+        && !inputApikey.contains(e.target)
+
+        && !buttonCreateP.contains(e.target)
+        && !inputCreatePVille.contains(e.target)
+        && !inputCreatePEspece.contains(e.target)
+        && !inputCreatePNom.contains(e.target)
+        && !buttonGoCreateP.contains(e.target)
+
+        && !buttonNumber.contains(e.target)
+        && !inputNumberL.contains(e.target)
+        && !buttonGoNumber.contains(e.target)
+
+        && !buttonDelete .contains(e.target)
+        && !inputNumberD.contains(e.target)
+        && !buttonGoDelete.contains(e.target)
         ) 
         {
         hideAll();
     }
 });
+
+hideAll();

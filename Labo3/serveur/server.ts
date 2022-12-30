@@ -20,14 +20,49 @@ app.get("/", async (req: Request, res: Response) => {
 	res.sendFile(path.join(__dirname, "/app/index.html"));
 });
 
-// app.get("/permis", ...
-// app.post("/permis", ...
-// app.put("/permis/:id", ...
-// app.delete("/permis/:id", ..
+app.put("/permis", async (req: Request, res: Response, next: NextFunction) => {
+	try {		
+		let reponse = await ControleurPermis.getControleurPermis().CtrP_Create(req);
+		res.header("Content-type", "application/json");
+		res.header("Charset", "utf8");
+		res.send(reponse); 
+	}
+	catch(err) { next(err); }
+});
 
-app.all("/permis", async (req: Request, res: Response, next: NextFunction) => {
-	try {
-		let reponse = await ControleurPermis.getControleurPermis().determinerAction(req);
+app.put("/usager", async (req: Request, res: Response, next: NextFunction) => {
+	try {		
+		let reponse = await ControleurPermis.getControleurPermis().CtrU_Create(req);
+		res.header("Content-type", "application/json");
+		res.header("Charset", "utf8");
+		res.send(reponse); 
+	}
+	catch(err) { next(err); }
+});
+
+app.get("/permis", async (req: Request, res: Response, next: NextFunction) => {
+	try {		
+		let reponse = await ControleurPermis.getControleurPermis().CtrP_GetAll(req);
+		res.header("Content-type", "application/json");
+		res.header("Charset", "utf8");
+		res.send(reponse); 
+	}
+	catch(err) { next(err); }
+});
+
+app.get("/permis/:id", async (req: Request, res: Response, next: NextFunction) => {
+	try {		
+		let reponse = await ControleurPermis.getControleurPermis().CtrP_GetByNumber(req);
+		res.header("Content-type", "application/json");
+		res.header("Charset", "utf8");
+		res.send(reponse); 
+	}
+	catch(err) { next(err); }
+});
+
+app.delete("/permis/:id", async (req: Request, res: Response, next: NextFunction) => {
+	try {		
+		let reponse = await ControleurPermis.getControleurPermis().CtrP_Delete(req);
 		res.header("Content-type", "application/json");
 		res.header("Charset", "utf8");
 		res.send(reponse); 
@@ -38,21 +73,6 @@ app.all("/permis", async (req: Request, res: Response, next: NextFunction) => {
 app.use(( err: Error, req: Request, res: Response, next: NextFunction ) : void => {
 	console.log(err);
 });
-
-// var test:any[];
-// var test:any[...Array(30)].map((e) => ((Math.random() * 36) | 0).toString(36)).join('')
-// Array.toString()
-
-// console.log();
-
-// const genAPIKey = () => {
-//     //create a base-36 string that contains 30 chars in a-z,0-9
-//     return [...Array(30)]
-//       .map((e) => ((Math.random() * 36) | 0).toString(36))
-//       .join('');
-//   };
-// let test=5;
-// console.log(test.toString(36));
   
 
 

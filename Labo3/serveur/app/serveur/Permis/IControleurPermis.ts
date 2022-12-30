@@ -3,10 +3,17 @@ import { Permis } from "./Permis";
 
 export interface IControleurPermis {
 
-    CtrP_GetAll(): any;
-    CtrP_GetByNumber(number: string): any;
-    CtrP_Create(body: object): any;
-    CtrP_Delete(number: string): any;
-    determinerAction(req: Request): any;
+    // CREATE
+    CtrP_Create(req: any): any;
+    CtrU_Create(req: any): any;
+
+    // READ
+    CtrP_GetAll(req: any): any;
+    CtrP_GetByNumber(req: any): any;
+    
+    // UPDATE
+
+    // DELETE
+    CtrP_Delete(req: any): any;
 
 }

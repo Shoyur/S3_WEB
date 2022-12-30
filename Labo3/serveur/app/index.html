@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Labo2 : Permis d'animaux sur MySQL</title>
+    <title>Labo3 : Permis d'animaux mais MySQL accédé par un API.</title>
     <link rel="icon" type="image/x-icon" href="public/ressources/images/ico/favicon.ico">
 
     <link rel="stylesheet" href="public/ressources/bootstrap-5.2.2-dist/css/bootstrap.min.css">
@@ -24,32 +24,42 @@
     <!-- Barre de navigation -->
     <nav class="navbar navbar-expand-lg bgnavbarperso navcustom">
         <ul class="navbar-nav">
-            <li class="nav-item">
-                <button id="b1" type="button" class="btn btn-secondary btn-smaller" onclick="listerPermis('all');">Tous les permis</button>
+            <li>
+                <div><button id="buttonCreateU" type="button" class="btn btn-secondary btn-smaller" onclick="buttonCreateUClick();">Créer Usager</button></div>
+                <div><input id="inputCreateUNom" type="text" class="form-control mr-1 input-c" placeholder="Nom"></div>
+                <div><input id="inputCreateUPrenom" type="text" class="form-control mr-1 input-c" placeholder="Prénom"></div>
+                <div><input id="inputCreateUCourriel" type="text" class="form-control mr-1 input-c" placeholder="Courriel"></div>
+                <div><input id="inputCreateUPass" type="text" class="form-control mr-1 input-c" placeholder="Mot de passe"></div>
+                <div><button id="buttonGoCreateU" type="button" class="btn btn-secondary butt-go" onclick="buttonGoCreateUClick();">Go</button></div>
             </li>
 
             <li>
-                <button id="buttonNumber" type="button" class="btn btn-secondary btn-smaller" onclick="buttonNumberClick();">Numéro</button>
-                <div class="form-inline">
-                    <input id="inputNumber" type="text" class="form-control mr-1 input-c fadein" placeholder="Entrez un numéro">
-                    <button id="buttonGoNumber" type="button" class="btn btn-secondary butt-go" onclick="listerPermis('number');">Go</button>
-                </div>
+                <div><input id="inputApikey" type="text" class="form-control mr-1 input-c" placeholder="Clé API"></div>
+                <div></div>
             </li>
 
             <li>
-                <button id="buttonCreate" type="button" class="btn btn-secondary btn-smaller" onclick="buttonCreateClick();">Créer</button>
-                <div class="form-inline">
-                    <input id="inputCreate" type="text" class="form-control mr-1 input-c" placeholder="Entrez une Create">
-                    <button id="buttonGoCreate" type="button" class="btn btn-secondary butt-go" onclick="listerPermis('Create');">Go</button>
-                </div>
+                <div><button id="buttonCreateP" type="button" class="btn btn-secondary btn-smaller" onclick="buttonCreatePClick();">Créer Permis</button></div>
+                <div><input id="inputCreatePVille" type="text" class="form-control mr-1 input-c" placeholder="Ville"></div>
+                <div><input id="inputCreatePEspece" type="text" class="form-control mr-1 input-c" placeholder="Espèce"></div>
+                <div><input id="inputCreatePNom" type="text" class="form-control mr-1 input-c" placeholder="Nom"></div>
+                <div><button id="buttonGoCreateP" type="button" class="btn btn-secondary butt-go" onclick="buttonGoCreatePClick();">Go</button></div>
             </li>
 
             <li>
-                <button id="buttonDelete" type="button" class="btn btn-secondary btn-smaller" onclick="buttonDeleteClick();">Supprimer</button>
-                <div class="form-inline">
-                    <input id="inputNumberD" type="text" class="form-control mr-1 input-c fadein" placeholder="Entrez un numéro">
-                    <button id="buttonGoDelete" type="button" class="btn btn-secondary butt-go" onclick="listerPermis('delete');">Go</button>
-                </div>
+                <div><button id="buttonListerAll" type="button" class="btn btn-secondary btn-smaller" onclick="listerPermis('tous');">Lister les permis</button></div>
+            </li>
+
+            <li>
+                <div><button id="buttonNumber" type="button" class="btn btn-secondary btn-smaller" onclick="buttonNumberClick();">Lister un permis</button></div>
+                <div><input id="inputNumberL" type="text" class="form-control mr-1 input-c" placeholder="Entrez un numéro"></div>
+                <div><button id="buttonGoNumber" type="button" class="btn btn-secondary butt-go" onclick="listerPermis('numero');">Go</button></div>
+            </li>
+
+            <li>
+                <div><button id="buttonDelete" type="button" class="btn btn-secondary btn-smaller" onclick="buttonDeleteClick();">Supprimer un permis</button></div>
+                <div><input id="inputNumberD" type="text" class="form-control mr-1 input-c" placeholder="Entrez un numéro"></div>
+                <div><button id="buttonGoDelete" type="button" class="btn btn-secondary butt-go" onclick="buttonDeleteClickGo();">Go</button></div>
             </li>
 
         </ul>

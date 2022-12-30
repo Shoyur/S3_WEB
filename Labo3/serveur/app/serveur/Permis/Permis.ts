@@ -1,4 +1,5 @@
 export class Permis {
+
   private idp: number = 0;
   private debut: Date = new Date;
   private fin: Date = new Date;
@@ -51,4 +52,5 @@ export class Permis {
   public setNom(nom: string): void {
     this.nom = nom;
   }
+  
 }

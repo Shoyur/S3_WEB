@@ -1,19 +1,10 @@
-// import * as fs from "fs-extra";
-import sha1 = require("sha1");
-
-// import { Permis } from "./Permis";
 import { IDaoPermis } from "./IDaoPermis";
-// import { Connexion } from "./../bd/Connexion";
-import https = require("https");
+import { default as axios } from 'axios';
 
 export class DaoPermis implements IDaoPermis {
 
   private static instanceDao: DaoPermis;
 
-  // Singleton de connexion à la BD
-  // getConnexion() est devenu une zone critique.
-  // Pour ne pas avoir deux processus légers (threads) qui
-  // appellent au même temps getConnexion
   private DaoPermis() {}
 
   public static getPermisDao(): DaoPermis | null {
@@ -26,49 +17,39 @@ export class DaoPermis implements IDaoPermis {
     catch (e) { return null; }
   }
 
-  // Read
-  public async MdlP_GetAll(): Promise<any> {
-    https.get('localhost:4000/api/v1/permis/ /apod?api_key=DEMO_KEY', (res) => {
-      let data = '';
-      res.on('data', (chunk) => { data += chunk; });
-      res.on('end', () => { return JSON.parse(data).explanation });
-    }).on("error", (e) => { 
-      console.log("Erreur: ", e);
-      return []; 
-    });
+  // CREATE
+  public async MdlP_Create(req: any): Promise<any> {
+    const url = 'http://localhost:4000/v1/permis/?apikey=' + req.query.apikey;
+    try { return (await axios.put(url, req.body)).data; }
+    catch(e) { return []; }
+  } 
+
+  public async MdlU_Create(req: any): Promise<any> {    
+    const url = 'http://localhost:4000/v1/usager/';
+    try { return (await axios.put(url, req.body)).data; }
+    catch(e) { return []; }
+  } 
+
+  // READ
+  public async MdlP_GetAll(req: any): Promise<any> {
+    const url = 'http://localhost:4000/v1/permis/?apikey=' + req.query.apikey;
+    try { return (await axios.get(url)).data; }
+    catch(e) { return []; }
   }
 
-  public async MdlP_GetByNumber(number: string): Promise<any> {
-    https.get('localhost:4000/api/v1/permis/ /apod?api_key=DEMO_KEY', (res) => {
-      let data = '';
-      res.on('data', (chunk) => { data += chunk; });
-      res.on('end', () => { return JSON.parse(data).explanation });
-    }).on("error", (e) => { 
-      console.log("Erreur: ", e);
-      return []; 
-    });
-  } 
+  public async MdlP_GetByNumber(req: any): Promise<any> {
+    const url = 'http://localhost:4000/v1/permis/' + req.params.id + '?apikey=' + req.query.apikey;
+    try { return (await axios.get(url)).data; } 
+    catch(e) { return []; }
+  }
   
-  public async MdlP_Create(body: object): Promise<any> {
-    https.get('localhost:4000/api/v1/permis/ /apod?api_key=DEMO_KEY', (res) => {
-      let data = '';
-      res.on('data', (chunk) => { data += chunk; });
-      res.on('end', () => { return JSON.parse(data).explanation });
-    }).on("error", (e) => { 
-      console.log("Erreur: ", e);
-      return []; 
-    });
-  } 
-  
-  public async MdlP_Delete(number: string): Promise<any> {
-    https.get('localhost:4000/api/v1/permis/ /apod?api_key=DEMO_KEY', (res) => {
-      let data = '';
-      res.on('data', (chunk) => { data += chunk; });
-      res.on('end', () => { return JSON.parse(data).explanation });
-    }).on("error", (e) => { 
-      console.log("Erreur: ", e);
-      return []; 
-    });
+  // UPDATE
+
+  // DELETE
+  public async MdlP_Delete(req: any): Promise<any> {
+    const url = 'http://localhost:4000/v1/permis/' + req.params.id + '?apikey=' + req.query.apikey;
+    try { return (await axios.delete(url)).data; } 
+    catch(e) { return []; }
   }  
   
 }

@@ -1,18 +1,11 @@
 import { IControleurPermis } from "./IControleurPermis";
 import { DaoPermis } from "./DaoPermis";
-import { Request } from "express";
-import { Permis } from "./Permis";
 
 export class ControleurPermis implements IControleurPermis {
 
   private static CtrP_Instance: any;
   private static Dao_Instance: any;
-  private reponse: any;
 
-  // Singleton du contrôleur
-  // getControleurPermis() est devenu une zonne critique.
-  // Pour ne pas avoir deux processus légers (threads) qui
-  // appellent au même temps getConnexion
   private ControleurPermis() {}
 
   public static getControleurPermis(): ControleurPermis | any {
@@ -26,36 +19,29 @@ export class ControleurPermis implements IControleurPermis {
     catch (e) { return { msg: "Oups!" }; }
   }
 
-  public async CtrP_GetAll(): Promise<object> {
-    return await ControleurPermis.Dao_Instance.MdlP_GetAll();
+  // CREATE
+  public async CtrP_Create(req: any): Promise<object> {
+    return await ControleurPermis.Dao_Instance.MdlP_Create(req);
   }
 
-  public async CtrP_GetByNumber(number: string): Promise<object> {
-    return await ControleurPermis.Dao_Instance.MdlP_GetBynumber(number);
+  public async CtrU_Create(req: any): Promise<object> {
+    return await ControleurPermis.Dao_Instance.MdlU_Create(req);
   }
 
-  public async CtrP_Create(body: object): Promise<object> {
-    return await ControleurPermis.Dao_Instance.MdlP_Create(body);
+  // READ
+  public async CtrP_GetAll(req: any): Promise<object> {
+    return await ControleurPermis.Dao_Instance.MdlP_GetAll(req);
   }
 
-  public async CtrP_Delete(number: string): Promise<object> {
-    return await ControleurPermis.Dao_Instance.MdlP_Delete(number);
+  public async CtrP_GetByNumber(req: any): Promise<object> {
+    return await ControleurPermis.Dao_Instance.MdlP_GetByNumber(req);
   }
 
+  // UPDATE
 
-  public async determinerAction(req: Request): Promise<object> {
-    let key = req.body.key;
-    switch (key) {
-      case "all":
-        return await this.CtrP_GetAll();
-      case "number":
-        return await this.CtrP_GetByNumber(req.body.value);
-      case "create":
-        return await this.CtrP_Create(req.body);
-      case "effacer":
-        return await this.CtrP_Delete(req.body.value);
-      default:
-        return { msg: "Action invalide!" };
-    }
+  // DELETE
+  public async CtrP_Delete(req: any): Promise<object> {
+    return await ControleurPermis.Dao_Instance.MdlP_Delete(req);
   }
+
 }

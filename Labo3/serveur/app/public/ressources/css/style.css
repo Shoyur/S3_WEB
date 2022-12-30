@@ -1,6 +1,5 @@
 body {
     background-color: #555555 !important;
-    /* color: aqua !important; */
 }
 
 button {
@@ -8,45 +7,34 @@ button {
 }
 
 .navcustom {
-    margin-left: 30px;
+    width: 100%;
+    justify-content: center;
 }
 
-.btn-smaller, .input-c {
+.btn-smaller, .input-c, .butt-go {
     padding: 3px;
     font-size: 12px;
     border-radius: 10px;
     border: solid black 1px;
     width: 145px;
+    margin-top: 5px;
+    float: left;
 }
 
 .input-c {
-    display: none;
-    margin-top: 5px;
     background-color: #cccccc;
-    width: 105px;
-    float: left;
-    margin-right: 5px;
-}
-
-.input-c2 {
-    width: 50px;
-}
-
-.butt-go {
-    display: none;
-    margin-top: 5px;
-    width: 35px;
-    float: left;
     padding: 3px;
-    font-size: 12px;
-    border-radius: 10px;
-    border: solid black 1px;
     
 }
 
+#inputApikey {
+    margin-right: 10px;
+}
+
 .contenu-c {
+    /* display: none; */
     position: absolute;
-    top: 120px;
+    top: 240px;
     bottom: 80px;
     right: 80px;
     left: 80px;
