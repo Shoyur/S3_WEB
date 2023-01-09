@@ -7,7 +7,11 @@
     @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@1,200&display=swap');
     * {
         box-sizing: border-box;
-        margin:0;padding:0;border:0 none;position: relative; outline: none;
+        margin:0;
+        padding:0;
+        border:0 none;
+        position: relative; 
+        outline: none;
     }
     body {
         background-color: #fff;
@@ -17,7 +21,7 @@
         text-transform: none;
         overflow-wrap: break-word;
         word-wrap: break-word;
-        background-image: url('bg1.jpg');
+        background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(bg1.jpg);
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: cover;
@@ -28,10 +32,12 @@
     }
     a { color: inherit; text-decoration: none; }
     a:before { content: ""; position: absolute; width: 100%; height: 3px; bottom: -8px; left: 0; background: #fff; visibility: hidden; transform: scaleX(0); transition: .30s linear; }
-    a:hover:before, a:focus:before { visibility: visible; transform: scaleX(1); }
+    a:hover:before, a:focus:before, a.premier { visibility: visible; transform: scaleX(1); }
     .liens { transition: opacity .25s ease-in-out; float: right; margin-left: 1rem; }
-    .lienshover:hover .liens { opacity: 0.25; }
     .lienshover:hover .liens:hover { opacity: 1; }
+    .lienshover:hover .liens { opacity: 0.25; }
+
+    a.premier { visibility: visible; transform: scaleX(1); }
     .page {
         margin: 0 auto;
     }
@@ -44,15 +50,20 @@
         color: #fff;
         padding-top: 2vw;
         padding-bottom: 2vw;
-        padding-left: 3vw;
-        padding-right: 3vw;
+        /* padding-left: 3vw;
+        padding-right: 3vw; */
     }
     .section0RE {
-        max-width: 1600px;
+        max-width: 70%;
         margin: 0 auto;
     }
+    .p70 {
+        max-width: 70%;
+        margin: 0 auto;
+        word-wrap: break-word;
+        padding-top: 50px;
+    }
     .section0RG {
-        font-family: 'Crimson Pro', serif;
         font-size: 30px;
         float: left;
         margin: 0 auto;
@@ -60,18 +71,25 @@
     .section0RD {
         float: right;
         margin: 0 auto;
-        margin-left: 1rem;
+        /* margin-left: 1rem; */
     }
-    #texte, #otest {
+    #texte {
         color: #fff;
-        font-size: medium;
+        font-size: 20px;
         margin: 0 auto;
         align-items: center;
         text-align: center;
+        word-wrap: break-word;
     }
 </style>
 
 <script>
+
+    Propos = "1p";
+    Services = "2p";
+    Contactez = "3p";
+
+    // function texte(option) { document.getElementById("texte").innerHTML = option; }
 
     function texte(option) {
         // var f = new XMLHttpRequest();
@@ -95,12 +113,10 @@
         rawFile.send(null);
     }
 
-
-
 </script> 
 
 </head>
-<body>
+<body onload="texte(Propos);">
     <div class="page"> <!-- toute la page dans body -->
         <div class="section0">
             <div class="section0RE"> <!-- rectangle avec espaces -->
@@ -109,15 +125,17 @@
                 </div>
                 <div class="section0RD"> <!-- rectangle droit -->
                     <div class="lienshover"> <!-- rectangle pour 4 -->
-                        <div class="liens"><a class="nav-link" href="javascript:void(0)" onclick="texte('Contactez');">Contactez-moi</a></div>
-                        <div class="liens"><a class="nav-link" href="javascript:void(0)" onclick="texte('Services');">Services</a></div>
-                        <div class="liens"><a class="nav-link" href="javascript:void(0)" onclick="texte('Propos');">À propos de moi</a></div>
+                        <div class="liens premier"><a class="premier" href="javascript:void(0)" onclick="texte(Contactez);">Contactez-moi</a></div>
+                        <div class="liens"><a href="javascript:void(0)" onclick="texte(Services);">Services</a></div>
+                        <div class="liens"><a href="javascript:void(0)" onclick="texte(Propos);">À propos de moi</a></div>
                     </div>
                 </div>
             </div>
         </div>
-        <span id="texte"></span>
-        <object id="otest"></object>
+        <div class="p70">
+            <!-- <span id="texte"></span> -->
+            <textarea name="" id="texte" cols="30" rows="10"></textarea>
+        </div>
     </div>
 </body>
 </html>

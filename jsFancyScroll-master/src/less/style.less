@@ -1,0 +1,98 @@
+@import "variables";
+@import "mixins";
+
+.scrollX, .scrollY {
+	@thumbColor: darken(@scrollbarColor, 20%);
+	@barColor: lighten(@scrollbarColor, 20%);
+	position: relative;
+	overflow: hidden;
+	padding: 0;
+
+	&:hover {
+		> .scrollbarY, .scrollbarX {
+			opacity: 1;
+		}
+	}
+
+	> .scrollbarY, .scrollbarX {
+		position: absolute;
+		opacity: 0;
+		border-radius: @scrollbarSize * 0.5;
+		cursor: pointer;
+		z-index: 1;
+		margin: @scrollbarMargin;
+		.rgbaBackground(@barColor);
+		.transition2(opacity, background);
+
+		&.dragScrolling {
+			opacity: 1;
+		}
+
+		&.disabled {
+			display: none;
+		}
+
+		> .thumb {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			border-radius: @scrollbarSize * 0.5;
+			.rgbaBackground(@thumbColor, 0.75);
+			.transition(background);
+		}
+
+		&:hover, &.dragScrolling {
+			z-index: 2;
+
+			> .thumb {
+				.rgbaBackground(darken(@thumbColor, 20%), 0.75);
+			}
+		}
+	}
+
+	> .scrollbarY {
+		top: 0;
+		bottom: 0;
+		right: 0;
+		width: @scrollbarSize;
+	}
+
+	> .scrollbarX {
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: @scrollbarSize;
+	}
+
+	> .viewport {
+		.boxSizing(content-box);
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+
+		> .content {
+			.boxSizing(content-box);
+		}
+	}
+}
+
+.scrollX.initialized > .viewport {
+	overflow-x: scroll;
+}
+
+.scrollY.initialized > .viewport {
+	overflow-y: scroll;
+}
+
+.scrollX.scrollY {
+
+	> .scrollbarX {
+		margin-right: @scrollbarMargin + @scrollbarSize;
+	}
+
+	> .scrollbarY {
+		margin-bottom: @scrollbarMargin + @scrollbarSize;
+	}
+}

@@ -1,0 +1,122 @@
+@font-face {
+  font-family: 'Caveat';
+  src: url('Caveat-Regular.ttf');
+}
+
+@media (min-width: 0px) {
+
+  html, body {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(bg1.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 10px;
+    font-family: 'Caveat';
+    color: #DFD;
+  }
+
+  .titre {
+    font-family: 'Caveat';
+    font-size: 40px;
+  }
+
+  .lesLiens {
+    text-align: right;
+    margin-left: auto; 
+    margin-right: 0;
+    align-items: center;
+  }
+
+  .liens {
+    float: top;
+    margin: 7px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 24px;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    padding-bottom: 3px;
+    border-bottom-style: hidden;
+    border-bottom-width: 1px;
+  }
+
+  .paragraphe {
+    margin-top: 7vh;
+    grid-column: 1 / -1;
+    overflow: auto;
+    word-wrap: break-word;
+    align-items: stretch;
+    font-size: 30px;
+    /* font-weight: 100; */
+    text-align: inherit;
+
+  }
+
+}
+
+@media (min-width: 600px) {
+
+  html, body {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(bg1.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-size: 20px;
+    margin: 0;
+    font-family: 'Caveat';
+    color: #DFD;
+  }
+
+  .titre {
+    font-family: 'Caveat';
+    font-size: 36px;
+  }
+
+  .contenant {
+      margin-top: 3vh;
+      display: grid;
+      grid-template-columns: 20vw 40vw;
+      grid-template-rows: 5vh 80vh;
+      justify-content: center;
+  }
+    
+
+  .lesLiens {
+    text-align: center;
+    margin-left: auto; 
+    margin-right: 0;
+    align-items: center;
+  }
+
+  .liens {
+    float: left;
+    margin: 7px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 19px;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    padding-bottom: 3px;
+    border-bottom-style: hidden;
+    border-bottom-width: 1px;
+  }
+
+  .paragraphe {
+    margin-top: 7vh;
+    grid-column: 1 / -1;
+    overflow: auto;
+    word-wrap: break-word;
+    align-items: stretch;
+    font-size: 24px;
+    /* font-weight: 100; */
+    text-align: inherit;
+
+  }
+
+}
